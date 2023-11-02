@@ -1,0 +1,27 @@
+---
+title: New blog and why pelican?
+date: 2014-11-11
+tags: [pelican, blog, design]
+---
+
+It has been a long time since I have written a blog post. This is due to an idiotic incident or I might say stupidity approach of someone, who decided to exploit the vulnerability of wordpress sites on the server where my blog was hosted. Yet, this incident occurred in the middle of this year, and it indeed took me a while to tackle and handle the new blog. Speaking of which the incident, it was perfect timing where I was just thinking of changing and researching which is the most suitable solution to switch from dynamic CMS (Custom Management System) to static one. Why I switched from dynamic to static, I might guess that almost everyone knows the reasons. But let me highlight the most important ones. For instance, static web sites are resistant to the attacks when the intruder requests more then one queries, there is no database in the back-end or on the server needed as requirements, the content of the posts and pages are written in pure markdown or some other plain text format, it is fun - particularly when you need to learn new language or totally new different approach, especially when you could hosted in free, community publicly available services, such as [GitHub](https://pages.github.com/) and many more. Those are just few reasons why I have decided to use and to switch my blog - homepage from dynamic web content management system to static one.
+
+Moreover, to switch from dynamic to static, I kind of dig deep into the several static web solutions. However, before I choose the right one, and before checking one by one, I had a requirements list which aims and guide me in selecting and shortening my list. Without any further a do, here are the requirements:
+- Static web solution.
+- Python language, because I'm more familiar rather then Ruby, Perl, etc.
+- Being able and easy to be deployed into GitHub Pages, particularly is because I want it to switch from payed host to a community based one. And most of the *nerds* and *geeks* nowadays are hosting there sites and blogs at GitHub Pages.
+- Be able to write the content with Markdown format, and import and export them from Org-mode format. Because this is the format that I usually use everyday.
+- Good documentation and to be able to import the content from WordPress to the required format.
+- Easy to be integrated with bootstrap3 and to be responsive, without any further tackling or need to create theme from stretch.
+- To be continuously maintained. 
+- Any indeed many others, which I could not recall them at the moment, but anyway feel free to add additional requirements.
+
+Worth withstanding, to mention one site which helped and provide me a perfect list of all freely-publicly available static web site generator  solutions, [StaticGen](https://www.staticgen.com/).
+
+The competition taking in mind the above requirements was between [Pelican](https://blog.getpelican.com/) and [Nikola](https://www.getnikola.com/). And to be frank with you, I like the Nikola name, mostly because it is Slavic name, however after couple of hours researching I have decided to give it a try to Pelican. Therefore, my first impression of it was that indeed I fell in love with it. Not because it is developed with Python, but also because of the simplicity and the structure of the content using tree approach. Additionally the [documentation](https://docs.getpelican.com/en/3.5.0/index.html) it-self it is quite good, I say quite because it could be better, but anyway it is well structured. It does provide step-wised methods of how to deploy your blog - pages into several different most popular cloud solutions, and so on. However, in the end for advance futures and advanced theme-ing and so on, you might find it a bit fragile and not enough to prepare you for next steps. Nonetheless, I do not want to give a wrong expression, it is quite well documented and it will provide you nice [tips](https://docs.getpelican.com/en/3.5.0/tips.html) - before you upload your first gh-pages in Github make sure to check the Tips section.
+
+At the beginning importing content from the previous system was quite nice done, and it provides you different solutions, such as plugins to import from well known CMS, or you can just import the RSS feeds, which in the end I did it. Anyhow, then you need to choose between tags and slugs what will be the difference and so on. Meantime, you also need to decide which [plugins](https://docs.getpelican.com/en/3.5.0/plugins.html) and [themes](https://docs.getpelican.com/en/3.5.0/pelican-themes.html) your are going to use. After you configure your ```pelicanconf.py```, don't forget to update the IDs for google analytics and the comments system. In the end, before you upload the content to the github pages make sure you understand or you know GitHub commands, otherwise you will be lost like me first hours. But finally I understood that if I would like to use GitHub for future work, most probably I will need to learn and know my way to deal with it. If you do not know, then you will end-up like me deleting the content, then screwing the GitHub repositories and so on.
+
+Anyway, hope that this will help you to decide if you have any doubts of which static web solution you should use, and how to deploy it and indeed, where as well. Hope you enjoy it and I will try my best to keep this blog up-to date and also share much more with you in near future.
+
+Salute...

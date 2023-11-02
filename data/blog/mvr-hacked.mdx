@@ -1,0 +1,278 @@
+---
+title: "Ministry of Interior – Macedonia, website defacement: https://mvr.gov.mk"
+date: 2012-06-25 23:00
+tags: [Attacks, cyber security, information warfare, legal aspects of cyber security, log mining, DDoS, exploitation, kns, macedonia, mvr, online, security, vulnerability, exploit]
+---
+
+
+
+Purpose
+=======
+
+
+
+Yesterday, the 25 of June 2012, the Macedonian website of Ministry of
+Interior (MVR) was defaced by Kosovo Network Security (KNS) group, below
+figure. However, after we have noticed and some of the social networking
+sites have informed me, I was concern to find out what just have
+happened and how did happen, and of course how they have done it. So for
+this purpose, I have done some digging into details, about the previous
+defacement activities of this very important government site. But before
+we continue with more details, let just talk about the situation of
+yesterday and what did the authorities take protective measures steps
+and actions.
+
+
+
+On Monday, 25 June 2012 at 19:38, one friend have updated his status in
+one of the social networking sites, as follows: “Хакован". And it made me
+extremely intrigue to see what actually have just happened. The below
+figure, displays the message spread from the KNS group.
+
+
+
+
+Moreover, what makes the situation even more interesting is that after
+the report that the site was defaced the authorities have taken a
+measures steps to fix the issue, by either shutting down the server or
+restoring the content of the site from the backup. Then after one or two
+minutes the site was defaced again. I did not want to lose the time and
+the nervous to check every five or ten minutes to see when it will be
+back again.
+
+
+
+Nevertheless, after 15 hours, or one stressful – hard core night for the
+administrators of the site, the usability and functionalities where back
+as normal, let just see how long will stay!
+
+
+
+Therefore, in the current post the idea is to give and overview, of what
+actually is going on when it comes to case of cyber space, cyber
+security issues in Macedonia. The structure of this post is introduces
+first with the issue, or the problem that actuality made me to write
+this post. Followed by the background investigation about the previous
+defacement activities on the Ministry of Interior website in Macedonia.
+Then with the background investigation about the KNS group, moreover,
+with the self pen-testing site with different attacking methodologies.
+And finally, closing by with a conclusion and action plan that should be
+taken, for hence actions. This post does not only involves the public
+sector, but even and the private sector too. Those agencies,
+organizations are too much careless and do not take any actions of
+securing their IT assets.
+
+
+
+Introduction
+============
+
+
+
+Ministry of Interior in Macedonia site offers different online services.
+The site primary idea is to inform the inhabitance about the news,
+actions, useful information, public relations, analysis and statistics;
+international cooperation and legislation; and finally the services. And
+secondly is to give and opportunities to the population scheduling of
+service, if their document is issued, etc.
+
+
+
+In one short sentence, this site, for some people, it may be very useful
+or not. However, I need to empathize that the site is only available in
+Macedonian language, nor Albania, nor English version. So, in simple
+conclusion this site is only useful for Macedonian speakers, and not for
+foreigners, yet still represents one of very important public service,
+government agency.
+
+
+
+Nevertheless, in the next section we will discuses the previous
+defacement and hacking attacks of this site.
+
+
+
+Background
+==========
+
+
+
+The service of this site, or the domain first was registered in 22
+October 2003, and unfortunate I do not remember when was first time
+available and published. However, in the pass years I have heard many
+times that this site was defaced and hacked, but still no actions or
+results were shown. Therefore, it made me very interesting to find out,
+if this defacement activities where notified and when and how many
+where. For this purpose I have use a site service that I know few years
+ago, the [Zone-H](https://www.zone-h.org/). Moreover,
+[Zone-H](https://www.zone-h.org/) is neither responsible for the reported
+computer crimes nor it is directly or indirectly involved with them, it
+is just and simple site where collects the cybercrime activities
+notified anonymously. The bellow figure provides a details of previous
+reported/notified cybercrime activities of MVR site in Macedonia.
+
+
+
+In details, total notifications are 4 of which 2 are single IP and 2 are
+mass defacements. The first mass defacement was done in 29 July 2009,
+when the site use a OS: Windows 2000, then in 2011 it was the
+re-defacement and the server operating system is Windows 2008. Followed
+by the other massive defacement in this year 2012 in March 18, and same
+year, few days before the current attack, 22 of June it was
+re-defacement. And the attack, defacement that we write for it was not
+notified or reported.
+
+
+
+From these data, and schedule, we can come to a conclusion that the site
+was defaced just 3 days before the mass defacement attack, so it might
+be a simple warning, to taken an action before something goes really
+wrong. But most probably, non of those administrators, or authorities
+did not taken any serious actions, until the case yesterday appears.
+
+
+
+Details
+=======
+
+
+
+To be able to do an analysis of what actually have happened, we need to
+take some actions.
+
+
+
+First, we have done a simple web sniffer, to find out what kind of
+system, and services the site, server is using. If we request the (http
+Request Header](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+we will receive an HTTP Response Header with a following data:
+
+
+
+```
+    Status: HTTP/1.1 200 OKCache-Control: privateContent-Type: text/html; charset=utf-8Server: Microsoft-IIS/7.0Set-Cookie: ASP.NET_SessionId=3lti3gep3usg4255ggf34tjn; path=/; HttpOnlyX-AspNet-Version: 2.0.50727X-Powered-By: ASP.NETDate: Tue, 26 Jun 2012 08:18:34 GMTConnection: closeContent-Length: 103773
+```
+
+
+The above data, is useful in a sense that provides as an information
+about the Server and the ASP.Net Version. Then, if we want to find more
+details about the open and close ports and operating system we can use
+the [nmap](https://nmap.org/) tool with the following command line:
+
+
+
+`nmap -O -v IP-Address`
+
+
+
+And the results will be as follows:
+
+
+
+```
+    PORT STATE SERVICE21/tcp open ftp80/tcp open httpRunning (JUST GUESSING) : Microsoft Windows Vista|2008|7 (89%)
+```
+
+
+From the web sniffing and from the OS version scanning we can assume
+that the server is running Microsoft Windows 2008. The current
+vulnerabilities and possible exploitations are visible on the [Microsoft
+Security
+Bulletins](https://technet.microsoft.com/en-us/security/bulletin/)
+website. By knowing the vulnerabilities it is very easy task to find out
+a way either to commit DoS attack or remote server access. However, in
+this post we will not go into details and exploitation descriptions.
+
+
+
+Moreover, the KNS, we assume the domain is followed:
+(https://kns-team.com](https://kns-team.com/). However, the site is down,
+therefore, we will have to understand who is behind this domain
+registration. Therefore, we will use the whois database to understand
+more, or even we can use another site that have been defaced by this
+group to find out more. So there is the list presented the members in
+the groups and their archive of notified defaced sites:
+
+
+
+-   [rAcKeR-BeSi](https://www.zone-h.org/archive/notifier=cracker-besi)
+-   GP
+-   [L0wHacker](https://www.zone-h.org/archive/notifier=L0wHacker)
+-   sLizer
+-   X-r00t
+-   SpyHackz
+
+
+
+The Facebook fan [page](https://www.facebook.com/pages/Kosova-Network-Security/176195849098989).
+For more info I was short of time to do more digging, but I hope that
+someone will.
+
+
+
+Action
+======
+
+
+
+After understanding the details about the MVR site, operating system and
+their server services, and information about the KNS, it is time to take
+an action of trying to see how vulnerable is MVR site, and to see if
+these lads had very difficult time of defacing the content of the site,
+or even gaining access to the server-side.
+
+
+
+But before, we carry on, I want to stress out that this section is not
+to give you an idea how, or knowledge to exploit or use any
+vulnerabilities to deface or gain access to the site. We will just
+demonstrate you a very simple
+[XSS](https://en.wikipedia.org/wiki/Cross-site_scripting) exploit of MVR
+site that we have found a vulnerability, figure below.
+
+
+
+
+It is therefore, from this very simple and easy exploitation of XSS
+vulnerability of the MVS site we will be able to run more advance and
+complicated shell scripts to gain access and maintain access of the
+server. Our initial idea is not to show you how to do it, but to expose
+to the audience that actually hence actions is need it. And we hope that
+the administrators, developers and the authorities will take an action
+of mitigating the risk, and further vulnerabilities of the site.
+
+
+
+Conclusion
+==========
+
+
+
+In Macedonia, cyber space, cyber crime, cyber security, cyber warefare,
+cyber terrorism are actually unknown words, terminology. They are not
+even specified or added into the Macedonian dictionary, nor in IT
+dictionary. However, this is not the first or least defacement, attack
+that has happened in Macedonia, nor the first attack that has been done,
+implemented by neighbor countries, or someone else. I just don’t
+understand why people in this country are so careless about how to
+protect their IT assets, and everything else, as well.
+
+
+
+Furthermore, it is not an issue that we do not have specialists to
+conduct a pen-testing to the sites and services that not only the
+government agencies are offering but even the banks and private sectors
+as well. We even have a cyber crime unit in Ministry of Interior, and
+one of very successful information security research and development
+laboratory in Macedonia: [Zero Science
+Lab](https://www.zeroscience.mk/en/).
+
+
+
+Nevertheless, in final conclusion, I would like to recommend the
+authorities to take actions about the above described activities done by
+KNS and hope that the security awareness will boost up, and the further
+actions will be considered of securing cyber space.
+
+
+
