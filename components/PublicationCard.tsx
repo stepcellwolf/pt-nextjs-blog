@@ -1,4 +1,3 @@
-import Image from './Image';
 import Link from './Link';
 
 interface PublicationCardProps {
@@ -27,7 +26,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({
           <div>
             {href ? (
               <Link href={href} aria-label={`Link to ${title}`}>
-                <Image
+                <img
                   alt={title}
                   src={imgSrc}
                   className="object-cover object-center md:h-439.2 lg:h-292.8"
@@ -36,7 +35,7 @@ const PublicationCard: React.FC<PublicationCardProps> = ({
                 />
               </Link>
             ) : (
-              <Image
+              <img
                 alt={title}
                 src={imgSrc}
                 className="object-cover object-center md:h-439.2 lg:h-292.8"

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { generalData } from "@/data/general";
 import { resumeData } from "@/data/resume";
 import type { Content } from "@/data/resume";
@@ -65,7 +64,7 @@ export default function Resume() {
     <>
       <main className="max-w-xxl mx-auto px-8 py-20 relative min-h-screen">
         <section className="flex items-center">
-          <Image
+          <img
             alt="Author"
             src={generalData.avatar}
             width={80}
