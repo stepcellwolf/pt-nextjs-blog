@@ -58,9 +58,8 @@ const securityHeaders = [
  * @type {import('next/dist/next-server/server/config').NextConfig}
  **/
 module.exports = () => {
-  const nextConfig = {
-    output: 'export',
-    basePath: '/gh-pages',
+  output: {
+    dir: 'out',
   }
 
   const plugins = [withContentlayer, withBundleAnalyzer]
