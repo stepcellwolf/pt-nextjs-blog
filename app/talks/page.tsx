@@ -8,10 +8,10 @@ export default function Talks() {
   // Sort the talksData array by date in descending order
 
   const sortedTalksData = talksData.sort((a, b) => {
-    const yearA = parseInt(a.date?.match(/\d{4}$/)?.[0] || '0', 10);
-    const yearB = parseInt(b.date?.match(/\d{4}$/)?.[0] || '0', 10);
-    return yearB - yearA;
-  });
+    const yearA = parseInt(a.date?.match(/\d{4}$/)?.[0] || '0', 10)
+    const yearB = parseInt(b.date?.match(/\d{4}$/)?.[0] || '0', 10)
+    return yearB - yearA
+  })
 
   return (
     <>
@@ -26,18 +26,15 @@ export default function Talks() {
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
-            
-                {sortedTalksData.map((d) => (
-                  <List
-                    key={d.title}
-                    title={d.title}
-                    date={d.date}
-                    location={d.location}
-                    description={d.description}
-                    href={d.href}
-                  />
-                ))}
-            
+            {sortedTalksData.map((d) => (
+              <List
+                key={d.title}
+                title={d.title}
+                date={d.date}
+                location={d.location}
+                description={d.description}
+              />
+            ))}
           </div>
         </div>
       </div>

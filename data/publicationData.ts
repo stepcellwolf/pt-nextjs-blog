@@ -30,7 +30,7 @@ const publicationData = [
     publisher: 'PenTest Magazine Audit and Stand: IS Risk Assessment Measurement',
     type: 'Journal Article',
     isbn: 'ISSN 2084-1116',
-    href: 'https://pentestmag.com/download/security-risk-management-pentest-open/',    
+    href: 'https://pentestmag.com/download/security-risk-management-pentest-open/',
   },
   {
     title: 'Web Servers Analysis under DoS Attacks',
@@ -38,40 +38,41 @@ const publicationData = [
     publisher: 'Secure Your Mobile, Protect Your Network and Hack More - Hakin9',
     type: 'Journal Article',
     isbn: 'ISSN 1733-178',
-    href: 'https://hakin9.org/download/secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/',    
+    href: 'https://hakin9.org/download/secure-your-mobile-protect-your-network-and-hack-more-with-hakin9-112012/',
   },
   {
     title: 'Frequently-Occurring Security Incidents',
     date: 'April 2013',
-    publisher: 'The 10th Conference for Informatics and Information Technology (CIIT 2013) , 2013 Faculty of Computer Science and Engineering, Macedonia',
+    publisher:
+      'The 10th Conference for Informatics and Information Technology (CIIT 2013) , 2013 Faculty of Computer Science and Engineering, Macedonia',
     type: 'Conference paper',
-    href: 'http://ciit.finki.ukim.mk/data/papers/10CiiT/10CiiT-44.pdf',    
+    href: 'http://ciit.finki.ukim.mk/data/papers/10CiiT/10CiiT-44.pdf',
   },
   {
     title: 'Methodological Approach to Security Awareness',
     date: 'December 2013',
     publisher: 'CyberSecurity for the Next Generation, Politechnico di Milano, Italy',
     type: 'Conference paper',
-    href: 'http://www.eurecom.fr/en/publication/4727/download/rs-publi-4727.pdf',    
+    href: 'http://www.eurecom.fr/en/publication/4727/download/rs-publi-4727.pdf',
   },
   {
     title: 'Macedonian Path Towards Cybersecurity',
     date: '2015',
     publisher: 'Information & Security: An International Journal, vol. 32, issue 1, 2015',
     type: 'Journal Article',
-    
   },
   {
     title: 'T and Cyber Security Awareness – Raising Campaigns',
     date: '2015',
     publisher: 'Information & Security: An International Journal, vol. 34 (2015)',
-    type: 'Journal Article', 
-  },{
+    type: 'Journal Article',
+  },
+  {
     title: 'Cybersecurity in the Western Balkans: Policy gaps and cooperation opportunities',
     date: 'September 2016',
     publisher: 'DiploFoundation, Geneva',
     type: 'Research Report',
-    href: 'https://www.diplomacy.edu/sites/default/files/Cybersecurity%20in%20Western%20Balkans.pdf',    
+    href: 'https://www.diplomacy.edu/sites/default/files/Cybersecurity%20in%20Western%20Balkans.pdf',
   },
 ]
 

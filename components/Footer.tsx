@@ -7,7 +7,7 @@ export default function Footer() {
     <footer>
       <div className="mt-16 flex flex-col items-center">
         <div className="mb-3 flex space-x-4">
-          Coonect with me via: <br/>
+          Coonect with me via: <br />
           <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size={6} />
           <SocialIcon kind="github" href={siteMetadata.github} size={6} />
           <SocialIcon kind="facebook" href={siteMetadata.facebook} size={6} />
@@ -21,7 +21,10 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>. Licensed under <Link href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">CC BY-NC 4.0</Link>
+          <Link href="/">{siteMetadata.title}</Link>. Licensed under{' '}
+          <Link href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">
+            CC BY-NC 4.0
+          </Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">

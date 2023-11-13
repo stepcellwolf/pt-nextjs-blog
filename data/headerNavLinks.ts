@@ -9,7 +9,6 @@ const headerNavLinks = [
   { href: '/resume', title: 'CV' },
   { href: '/about', title: 'About' },
   { href: '/tags', title: 'Tags' },
-
 ]
 
 export default headerNavLinks

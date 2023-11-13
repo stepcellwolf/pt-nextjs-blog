@@ -127,7 +127,7 @@ npx degit 'timlrx/tailwind-nextjs-starter-blog'
 3. Modify the content security policy in `next.config.js` if you want to use
    other analytics provider or a commenting solution other than giscus.
 4. Personalize `authors/default.md` (main author)
-5. Modify `projectsData.js`
+5. Modify `taskData.js`
 6. Modify `headerNavLinks.js` to customize navigation links
 7. Add blog posts
 8. Deploy on Vercel
@@ -156,7 +156,7 @@ Edit the layout in `app` or content in `data`. With live reloading, the pages au
 
 `data/authors/default.md` - default author information (required). Additional authors can be added as files in `data/authors`.
 
-`data/projectsData.js` - data used to generate styled card on the projects page.
+`data/taskData.js` - data used to generate styled card on the projects page.
 
 `data/headerNavLinks.js` - navigation links.
 

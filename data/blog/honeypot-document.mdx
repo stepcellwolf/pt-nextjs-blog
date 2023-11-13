@@ -1,15 +1,10 @@
 ---
-title: "Honeypot document"
+title: 'Honeypot document'
 date: 2012-02-16 00:00
 tags: [honeypot document, cyber security, honeypot]
 ---
 
-
-
-INTRODUCTION
-============
-
-
+# INTRODUCTION
 
 The main goal of laboratory report is to identify possible leaked/stolen
 information, documents from our system without recognising that attacker
@@ -17,16 +12,12 @@ had an access. Thus access of the document will inform us immediately
 with the information of the burglar. The report should highlight the
 following aspects:
 
-
-
--   Constructed an document as non malicious code, for instance honey
-    document that will help us to track from where, who, information
-    about the system, etc. is using our document.
--   Detail description of process, how did we build the document and the
-    idea behind the tracking system.
--   Description of needed infrastructure that is tracking the document.
-
-
+- Constructed an document as non malicious code, for instance honey
+  document that will help us to track from where, who, information
+  about the system, etc. is using our document.
+- Detail description of process, how did we build the document and the
+  idea behind the tracking system.
+- Description of needed infrastructure that is tracking the document.
 
 The laboratory report is created by a team of 7 members. Where each
 member had own task to accomplish. Moreover, to be more contingent the
@@ -48,17 +39,10 @@ section we provide the code of the honeypot document and additional what
 is the leaked/collected information of the intruder system, with other
 word, content illustration of mail and server logs.
 
-
-
 Finally the conclusion made of the laboratory report will be concise in
 summary section.
 
-
-
-HONEYPOT IDEA
-=============
-
-
+# HONEYPOT IDEA
 
 HTML file We can name the file online banking or etc. cause it is html
 and it is more convincing way that the attacker will assume that this is
@@ -74,11 +58,7 @@ requests it from our server- these requests are logged and we see the IP
 address of the opener. This is as a backup in case the user doesn’t
 allow javascript to execute.
 
-
-
 **How we lure an attacker into trap**
-
-
 
 To discover the identity of attacker and get information, she/he has to
 open html file. Besides setting up honeypot from technical point of
@@ -99,11 +79,7 @@ Word documents, so it has different icon in GUI. If you put a lot of
 different files in a folder, html is much easier to find with a glance
 among PDFs and DOCs.
 
-
-
 **What information we get**
-
-
 
 The honeypot is scripted to give us the following information about the
 attacker: first of all IP address. Time, hen the attacker accessed the
@@ -119,24 +95,19 @@ stealthy as possible.
 The information is sent to mail. For the example of sent e-mail, please
 refer to Appendix 2.
 
-
-
-HONEYPOT INFRASTRUCTURE
-=======================
-
-
+# HONEYPOT INFRASTRUCTURE
 
 We need a Web server running PHP. The PHP script will collect the JSON
-data received  
+data received
 
 from the attacker, format it nicely and send via email to people who
-will process it. If  
+will process it. If
 
 JavaScript is not enabled on the attacker’s side we rely on the fact
-that a picture is  
+that a picture is
 
 accessed from the honeypot html file. The server has to serve this image
-and the request  
+and the request
 
 for it of course appears in the web server access logs. This information
 again is processed by the same PHP script mentioned above and forwarded
@@ -189,13 +160,9 @@ the document. SEC are described in Appendix 3.
 
 HTML + Java script code presented below:
 
-
-
 ## Appendix 2
 
 What we receive via email:
-
-
 
 ## Appendix 3
 
@@ -203,11 +170,9 @@ SEC rule file for web server log monitoring (will work only for IPv4).
 Alerts the root user via email and suppresses alerts for one hours for
 the same IP address
 
-
-
 # Bibliography
 
-[1] Wikipedia, Honeypot (computing), 4 December 2011, [Link](https://en.wikipedia.org/wiki/Honeypot_(computing)).
+[1] Wikipedia, Honeypot (computing), 4 December 2011, [Link](<https://en.wikipedia.org/wiki/Honeypot_(computing)>).
 
 [2] Risto Vaarandi, SEC man page, NA, [Link](https://simple-evcorr.sourceforge.net/man.html](/web/20120310213401/https://simple-evcorr.sourceforge.net/man.html).
 

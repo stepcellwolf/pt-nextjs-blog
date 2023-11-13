@@ -1,10 +1,8 @@
 ---
-title: "Texworks 0.5r952, error libpoppler-qt4.so.3, Ubuntu 12.04"
+title: 'Texworks 0.5r952, error libpoppler-qt4.so.3, Ubuntu 12.04'
 date: 2012-06-18 23:00
 tags: [libpoppler, texworks, ubuntu]
 ---
-
-
 
 I had to use the texworks to do some changes in my LaTeX CV template,
 and in the previous version of Ubuntu I had not issues at all. But
@@ -14,33 +12,20 @@ will provide the readers and solution of how to fix this issue. But
 before we continue I would like to mention that this issue has never
 been posted before, anywhere else.
 
-
-
-Installation of [Texworks](https://tug.org/texworks/ "Texworks")
-
-
+Installation of [Texworks](https://tug.org/texworks/ 'Texworks')
 
 In the shell command we install the texworks with the following script:
 
-
-
 `sudo apt-get install texworks`
 
-
-
-Issue / Error
-=============
-
-
+# Issue / Error
 
 After the installation is finished, then if we try to run the program
 from Unity or even from the terminal, it will give us an error:\<
 
-
-```
+````
     texworks: error while loading shared libraries: libpoppler-qt4.so.3: cannot open shared object file: No such file or directory```So now we know that there is some issue with the ```libpoppler-qt4``` library. To determine if we miss any other dependency libraries we can double check with the following command:```ldd /usr/bin/texworks```And the following output should look like this:
-```
-
+````
 
 ```
 linux-gate.so.1 = (0xb76f2000)
@@ -129,9 +114,7 @@ libXdmcp.so.6 =\) /usr/lib/i386-linux-gnu/libXdmcp.so.6 (0xb5c9e000)
 
 ```
 
-
-Where we can see from the above output that the ```libpoppler-qt4.so.3 = not found ``` is missing.The best way to solve this issue, first we have to locate where are the other libraries of QT4. This is very simple approach, because the other libraries links, location is provided from the above output. Therefore, we can see that in the path ```/usr/lib/i386-linux-gnu/``` there is an library called: ```libpoppler-qt4.so.4```.# ResolutionFrom the above output, and the path that we have found of the missing library, there is an simple and easy way of fixing this issue, shown below.Therefore, in the terminal we can make an soft link with the missing library from the already existing one, with the following:```sudo ln -s /usr/lib/i386-linux-gnu/libpoppler-qt4.so.4 /usr/lib/i386-linux-gnu/libpoppler-qt4.so.3```And now the texworks works perfectly!# Details
-
+Where we can see from the above output that the `libpoppler-qt4.so.3 = not found ` is missing.The best way to solve this issue, first we have to locate where are the other libraries of QT4. This is very simple approach, because the other libraries links, location is provided from the above output. Therefore, we can see that in the path `/usr/lib/i386-linux-gnu/` there is an library called: `libpoppler-qt4.so.4`.# ResolutionFrom the above output, and the path that we have found of the missing library, there is an simple and easy way of fixing this issue, shown below.Therefore, in the terminal we can make an soft link with the missing library from the already existing one, with the following:`sudo ln -s /usr/lib/i386-linux-gnu/libpoppler-qt4.so.4 /usr/lib/i386-linux-gnu/libpoppler-qt4.so.3`And now the texworks works perfectly!# Details
 
 ```
 \$ texworks --version
@@ -151,7 +134,4 @@ There is NO WARRANTY, to the extent permitted by law.
 
 ```
 
-Also this bug/issue has been reported in [Launchpad.net](https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193 "Launchpad Bug").
-
-
-
+Also this bug/issue has been reported in [Launchpad.net](https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193 'Launchpad Bug').

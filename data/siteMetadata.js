@@ -9,7 +9,7 @@ const siteMetadata = {
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   socialBanner: '/static/images/twitter-card.png',
-  mastodon: 'https://mastodon.social/@mastodonuser',
+  mastodon: 'https://mastodon.social/@stepcellwolf',
   email: 'pece@predragtasevski.com',
   github: 'https://github.com/stepcellwolf/',
   twitter: 'https://twitter.com/stepcellwolf',
@@ -34,11 +34,6 @@ const siteMetadata = {
     // googleAnalytics: {
     //   googleAnalyticsId: '', // e.g. G-XXXXXXX
     // },
-  },
-  newsletter: {
-    // supports mailchimp, buttondown, convertkit, klaviyo, revue, emailoctopus
-    // Please add your .env file and modify it according to your selection
-    provider: 'buttondown',
   },
   comments: {
     // If you want to use an analytics provider you have to add it to the

@@ -2,7 +2,8 @@ const talksData = [
   {
     title: 'Hate Speech on Internet',
     date: '14 - 17 November 2012',
-    description: 'Hate speech on Internet, delivering educational terminology, classification, and how to report hate speech on Internet',
+    description:
+      'Hate speech on Internet, delivering educational terminology, classification, and how to report hate speech on Internet',
   },
   {
     title: 'ACTA - ACTIVE CITIZENS TAKE ACTION',
@@ -14,13 +15,15 @@ const talksData = [
     title: 'Belgrade Security Forum 2013',
     date: '19 – 21 September 2013',
     location: 'Belgrade, Serbia',
-    description: 'Assuring Cyber-Security in the Western Balkans and the Rest of Europe: Roles and Responsibilities of Institutions, Industry and Users?',
+    description:
+      'Assuring Cyber-Security in the Western Balkans and the Rest of Europe: Roles and Responsibilities of Institutions, Industry and Users?',
   },
   {
     title: 'Smart Defense and Open – Door Policy – New Synergies for Euro – Atlantic Security',
     date: '27 November 2013',
     location: 'Sofia, Bulgaria',
-    description: 'Collective Cyber Defence – The Role of Newer Members and Opportunities for Specialization of Bulgaria in the Alliance Questions and answers',
+    description:
+      'Collective Cyber Defence – The Role of Newer Members and Opportunities for Specialization of Bulgaria in the Alliance Questions and answers',
   },
   {
     title: 'Kaspersky - CyberSecurity for the Next Generation 2014 (EU Round)',
@@ -32,10 +35,12 @@ const talksData = [
     title: 'NATO ARW: Strengthening Cyber Defense for Critical Infrastructure',
     date: '30 - 31 October 2014',
     location: 'Kiev, Ukraine',
-    description: 'Standards for Information Security are inappropriate fashion to assess the risk in private companies and elsewhere',
+    description:
+      'Standards for Information Security are inappropriate fashion to assess the risk in private companies and elsewhere',
   },
   {
-    title: 'DCAF Young Faces Network 2014: Young Faces Network Cybersecurity Winter School for the Western Balkans',
+    title:
+      'DCAF Young Faces Network 2014: Young Faces Network Cybersecurity Winter School for the Western Balkans',
     date: '1 - 5 December 2014',
     location: 'Petnica, Serbia',
     description: 'How the Internet works and Introduction to cybersecurity threats and risks',
@@ -47,7 +52,8 @@ const talksData = [
     description: 'Cyber security awareness among the Balkan Countries and the rest of the world',
   },
   {
-    title: 'Geneva Internet Platform (GIP): Fighting cybercrime through closer international cooperation',
+    title:
+      'Geneva Internet Platform (GIP): Fighting cybercrime through closer international cooperation',
     date: '30 March 2015',
     location: 'Geneva, Switzerland',
     description: 'Presenting Cybersecurity Lab',
@@ -122,7 +128,8 @@ const talksData = [
     title: 'NATO ARW',
     date: '15 - 17 November 2016',
     location: 'Skopje, N. Macedonia',
-    description: 'Health Security: Benchmarking Best Practices in Telemedicine for Eastern European NATO Members',
+    description:
+      'Health Security: Benchmarking Best Practices in Telemedicine for Eastern European NATO Members',
   },
   {
     title: 'SEEDIG - South Eastern European Dialogue on Internet Governance',
@@ -131,7 +138,8 @@ const talksData = [
     description: 'Mobile security and pentesting',
   },
   {
-    title: 'SECOND REGIONAL INTERNET FREEDOM SUMMIT, AMERICAN BAR ASSOCIATION RULE OF LAW INITIATIVE’S (ABA ROLI’S): Development and Enhancement of Legal Frameworks in Eastern Europe and Eurasia to Protect Internet Freedom Program',
+    title:
+      'SECOND REGIONAL INTERNET FREEDOM SUMMIT, AMERICAN BAR ASSOCIATION RULE OF LAW INITIATIVE’S (ABA ROLI’S): Development and Enhancement of Legal Frameworks in Eastern Europe and Eurasia to Protect Internet Freedom Program',
     date: '21 - 25 March 2018',
     location: 'Struga, N. Macedonia',
     description: 'Cybersecurity Challenges for 2018',
@@ -146,19 +154,22 @@ const talksData = [
     title: '4TH SEEDIG MEETING',
     date: '23 – 24 May 2018',
     location: 'Ljubljana, Slovenia',
-    description: 'Session 5: Securing all data. Cybersecurity: National frameworks and regional cooperation',
+    description:
+      'Session 5: Securing all data. Cybersecurity: National frameworks and regional cooperation',
   },
   {
     title: '28th Economic Forum',
     date: '4 - 6 September 2018',
     location: 'Krynica-Zdroj, Poland',
-    description: 'Discussion panel: Developing an Innovative Nationwide Education for Cyber Security',
+    description:
+      'Discussion panel: Developing an Innovative Nationwide Education for Cyber Security',
   },
   {
     title: 'Economic Forum of Young Leaders 2018',
     date: '3 - 7 September 2018',
     location: 'Nowy Sacz, Poland',
-    description: 'Panel discussion: Enterprises in the world of smart products ‒ Industry 4.0 technologies at your fingertips',
+    description:
+      'Panel discussion: Enterprises in the world of smart products ‒ Industry 4.0 technologies at your fingertips',
   },
   {
     title: 'NATO ARW: Fundamental readiness in Cyber Defence in the Balkans (FRCDB)',
@@ -176,19 +187,22 @@ const talksData = [
     title: 'Berlin Process for the Western Balkans',
     date: '4 - 5 July 2019',
     location: 'Poznan, Poland',
-    description: 'Panel discussion: Hybrid Threats to Democracy: Disinformation, propaganda and fake news',
+    description:
+      'Panel discussion: Hybrid Threats to Democracy: Disinformation, propaganda and fake news',
   },
   {
     title: '29th Economic Forum',
     date: '3 - 5 September 2019',
     location: 'Krynica-Zdrój, Poland',
-    description: 'Panel discussion: Cyber Security of Critical Infrastructure and Industry. Presentation title: International Cooperation Between National Cyber Security Strategies for building a sustainable Digital Transformation, and Critical Infrastructure and Industry',
+    description:
+      'Panel discussion: Cyber Security of Critical Infrastructure and Industry. Presentation title: International Cooperation Between National Cyber Security Strategies for building a sustainable Digital Transformation, and Critical Infrastructure and Industry',
   },
   {
     title: 'Internet Generation Forum',
     date: '12 September 2019',
     location: 'Budapest, Hungary',
-    description: 'Discussing the Internet of Today and Tomorrow. Panel discussion: Keeping the Internet of tomorrow safe and secure for youngsters',
+    description:
+      'Discussing the Internet of Today and Tomorrow. Panel discussion: Keeping the Internet of tomorrow safe and secure for youngsters',
   },
   {
     title: 'IFG-MKD: 3rd Third Annual Internet Governance Forum Macedonia',
@@ -200,7 +214,8 @@ const talksData = [
     title: 'Fourteenth Annual Meeting of the Internet Governance Forum (IGF) - IGF 2019',
     date: '25 - 29 November 2019',
     location: 'Berlin, Germany',
-    description: 'NRIs Collaborative Session on Cybersecurity. Emerging technologies and their interfaces with inclusion, security and human rights (NRIs)',
+    description:
+      'NRIs Collaborative Session on Cybersecurity. Emerging technologies and their interfaces with inclusion, security and human rights (NRIs)',
   },
   {
     title: 'Internet društvo Srbije, Beogradski ogranak',
@@ -208,7 +223,6 @@ const talksData = [
     location: 'Remote',
     description: 'Vebinar o temi sa ISOC Fundamentals treninga',
   },
-
 ]
 
 export default talksData

@@ -13,7 +13,7 @@ const projectsData = [
     imgSrc: '/static/images/cfr-cert.png',
     href: 'https://certnexus.com/certification/cybersec-first-responder/',
   },
-  
+
   {
     title: 'NATO: Fundamental readiness in Cyber Defence in the Balkans',
     date: '17-19 October 2018',
@@ -27,8 +27,10 @@ const projectsData = [
     location: 'Skopje, N. Macedonia',
     description: `Co-director of Advanced Research Workshop (IISEG.EAP.ARW.985183), supported by NATO Science for Peace and Security programme, , Skopje, Macedonia. Participants were among well-known healthcare leaders from government, military, public and private sector, and NGOs within NATO members and partner countries.`,
     imgSrc: '/static/images/NATOhor_RGB.jpg',
-  },{
-    title: 'Cybersecurity in the Western Balkans: Policy gaps and cooperation opportunities (Researcher)',
+  },
+  {
+    title:
+      'Cybersecurity in the Western Balkans: Policy gaps and cooperation opportunities (Researcher)',
     date: '12 August 2016',
     description: `Author on the report on cybersecurity cooperation in the Western Balkans implemented with the support of the Federal Department of Foreign Affairs of Switzerland, in partnership with the Geneva Centre for the Democratic Control of Armed Forces (DCAF). Full report available at DiploFoundation.`,
     imgSrc: '/static/images/diplo.jpg',

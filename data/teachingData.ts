@@ -4,6 +4,7 @@ const teachingData = [
     date: 'February 2021',
     location: 'On-line',
     description: `Mentor for Cybersecurity Studies/Bootcamp at University of South Florida curriculum.`,
+    href: 'https://www.springboard.com/courses/cyber-security-career-track/',
   },
   {
     title: 'Winter School: Cybersecurity for South-Eastern Europe',

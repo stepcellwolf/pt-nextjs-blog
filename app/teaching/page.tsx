@@ -1,5 +1,5 @@
 import talksData from '@/data/teachingData'
-import Card from '@/components/Card'
+import CardTeach from '@/components/CardTeach'
 import { genPageMetadata } from 'app/seo'
 
 export const metadata = genPageMetadata({ title: 'Teaching & Mentoring' })
@@ -19,7 +19,7 @@ export default function Talks() {
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {talksData.map((d) => (
-              <Card
+              <CardTeach
                 key={d.title}
                 title={d.title}
                 date={d.date}

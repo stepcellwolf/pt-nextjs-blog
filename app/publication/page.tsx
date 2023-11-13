@@ -1,7 +1,7 @@
 import publicationData from '@/data/publicationData'
 import PublicationCard from '@/components/PublicationCard'
 import { genPageMetadata } from 'app/seo'
-import Link from 'next/link';
+import Link from 'next/link'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 
@@ -14,10 +14,13 @@ export default function Projects() {
             Publications
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            List of publications | <Link 
+            List of publications |{' '}
+            <Link
               href="https://www.researchgate.net/profile/Predrag_Tasevski"
               className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-              >Researchgate.net profile</Link>
+            >
+              Researchgate.net profile
+            </Link>
           </p>
         </div>
         <div className="container py-12">
@@ -26,12 +29,12 @@ export default function Projects() {
               <PublicationCard
                 key={d.title}
                 title={d.title}
-                type={d.type}
                 date={d.date}
-                location={d.location}
-                description={d.description}
                 imgSrc={d.imgSrc}
+                type={d.type}
+                isbn={d.isbn}
                 href={d.href}
+                publisher={d.publisher}
               />
             ))}
           </div>
