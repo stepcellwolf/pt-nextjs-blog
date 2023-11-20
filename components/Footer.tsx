@@ -22,7 +22,7 @@ export default function Footer() {
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
           <Link href="/">{siteMetadata.title}</Link>. Licensed under{' '}
-          <Link href="http://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">
+          <Link href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">
             CC BY-NC 4.0
           </Link>
         </div>
