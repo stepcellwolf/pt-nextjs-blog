@@ -1,0 +1,4 @@
+Contact: mailto:pece@predragtasevski.com
+Expires: 2024-11-21T22:59:00.000Z
+Preferred-Languages: en, mk, bg, sr
+Canonical: https://predragtasevski.com/.well-known/security.txt
