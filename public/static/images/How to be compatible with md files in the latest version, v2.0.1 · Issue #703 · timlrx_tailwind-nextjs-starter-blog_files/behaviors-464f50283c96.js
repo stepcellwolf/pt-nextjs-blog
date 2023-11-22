@@ -1138,18 +1138,18 @@
           return i > l.top + l.height
             ? eY(e, s + 1, n, r, i, a + 1)
             : i < l.top
-            ? eY(e, t, s - 1, r, i, a + 1)
-            : 3 > l.xDistance(r)
-            ? s
-            : l.left < r
-            ? 0 !== eJ(e, s + 1).checkLine(i)
-              ? s
-              : eY(e, s + 1, n, r, i, a + 1)
-            : l.left > r
-            ? 0 !== eJ(e, s - 1).checkLine(i)
-              ? s
-              : eY(e, t, s - 1, r, i, a + 1)
-            : s
+              ? eY(e, t, s - 1, r, i, a + 1)
+              : 3 > l.xDistance(r)
+                ? s
+                : l.left < r
+                  ? 0 !== eJ(e, s + 1).checkLine(i)
+                    ? s
+                    : eY(e, s + 1, n, r, i, a + 1)
+                  : l.left > r
+                    ? 0 !== eJ(e, s - 1).checkLine(i)
+                      ? s
+                      : eY(e, t, s - 1, r, i, a + 1)
+                    : s
         },
         eQ = (e, t, n) => {
           let r = e.value.length
@@ -1955,16 +1955,16 @@ ${t}
             204 === r.status
               ? (t0(this.policy), e.attachmentUploadDidComplete(this.attachment, this.policy, {}))
               : 201 === r.status
-              ? (t0(this.policy),
-                e.attachmentUploadDidComplete(
-                  this.attachment,
-                  this.policy,
-                  JSON.parse(r.responseText)
-                ))
-              : e.attachmentUploadDidError(this.attachment, {
-                  status: r.status,
-                  body: r.responseText,
-                })
+                ? (t0(this.policy),
+                  e.attachmentUploadDidComplete(
+                    this.attachment,
+                    this.policy,
+                    JSON.parse(r.responseText)
+                  ))
+                : e.attachmentUploadDidError(this.attachment, {
+                    status: r.status,
+                    body: r.responseText,
+                  })
           let i = window.performance.now(),
             a = {
               duration: i - t,
@@ -3002,8 +3002,8 @@ ${t}
                 ? 'bottom-left'
                 : 'bottom-right'
               : e
-              ? 'top-left'
-              : 'top-right',
+                ? 'top-left'
+                : 'top-right',
           }
         }
       }
@@ -3068,18 +3068,19 @@ ${t}
         return 'pull_request' === t || 'issue' === t
           ? !!e.closest('[data-issue-and-pr-hovercards-enabled]')
           : 'team' === t
-          ? !!e.closest('[data-team-hovercards-enabled]')
-          : 'repository' === t
-          ? !!e.closest('[data-repository-hovercards-enabled]')
-          : 'commit' === t
-          ? !!e.closest('[data-commit-hovercards-enabled]')
-          : 'project' === t
-          ? !!e.closest('[data-project-hovercards-enabled]')
-          : 'discussion' === t
-          ? !!e.closest('[data-discussion-hovercards-enabled]')
-          : 'acv_badge' === t
-          ? !!e.closest('[data-acv-badge-hovercards-enabled]')
-          : 'sponsors_listing' !== t || !!e.closest('[data-sponsors-listing-hovercards-enabled]')
+            ? !!e.closest('[data-team-hovercards-enabled]')
+            : 'repository' === t
+              ? !!e.closest('[data-repository-hovercards-enabled]')
+              : 'commit' === t
+                ? !!e.closest('[data-commit-hovercards-enabled]')
+                : 'project' === t
+                  ? !!e.closest('[data-project-hovercards-enabled]')
+                  : 'discussion' === t
+                    ? !!e.closest('[data-discussion-hovercards-enabled]')
+                    : 'acv_badge' === t
+                      ? !!e.closest('[data-acv-badge-hovercards-enabled]')
+                      : 'sponsors_listing' !== t ||
+                        !!e.closest('[data-sponsors-listing-hovercards-enabled]')
       }
       async function rd(e, t) {
         let n
@@ -3840,8 +3841,8 @@ ${i}
           return e.classList.contains('user-mention') || e.classList.contains('team-mention')
             ? t
             : e.classList.contains('issue-link') && /^#\d+$/.test(t)
-            ? t
-            : e
+              ? t
+              : e
         },
         IMG(e) {
           let t = e.getAttribute('alt')
@@ -6943,10 +6944,10 @@ ${r}\`\`\``),
           return this.pendingRequest
             ? this.pendingRequest.abort()
             : this.collapsible.hasAttribute('loaded')
-            ? this.isOpen
-              ? this.setClose()
-              : this.setOpen()
-            : (this.setLoading(), this.updateCollapsible())
+              ? this.isOpen
+                ? this.setClose()
+                : this.setOpen()
+              : (this.setLoading(), this.updateCollapsible())
         }
         setLoading() {
           this.classList.add(this.loadingClass), this.classList.remove(this.activeClass)
@@ -8116,12 +8117,12 @@ ${r}\`\`\``),
         return null != t.column && null != n.column
           ? `L${t.line}C${t.column}-L${n.line}C${n.column}`
           : null != t.column
-          ? `L${t.line}C${t.column}-L${n.line}`
-          : null != n.column
-          ? `L${t.line}-L${n.line}C${n.column}`
-          : t.line === n.line
-          ? `L${t.line}`
-          : `L${t.line}-L${n.line}`
+            ? `L${t.line}C${t.column}-L${n.line}`
+            : null != n.column
+              ? `L${t.line}-L${n.line}C${n.column}`
+              : t.line === n.line
+                ? `L${t.line}`
+                : `L${t.line}-L${n.line}`
       }
       function a(e) {
         let t = e.length < 5e3 && e.match(/(file-.+?-)L\d+?/i)
@@ -8188,8 +8189,8 @@ ${r}\`\`\``),
         return e.line === t.line && e.column === t.column
           ? 0
           : e.line === t.line && 'number' == typeof e.column && 'number' == typeof t.column
-          ? e.column - t.column
-          : e.line - t.line
+            ? e.column - t.column
+            : e.line - t.line
       }
       n.d(t, { Dw: () => s, G5: () => r, M9: () => c, n6: () => o })
     },
@@ -8303,12 +8304,12 @@ ${r}\`\`\``),
         return e.score > t.score
           ? -1
           : e.score < t.score
-          ? 1
-          : e.text < t.text
-          ? -1
-          : e.text > t.text
-          ? 1
-          : 0
+            ? 1
+            : e.text < t.text
+              ? -1
+              : e.text > t.text
+                ? 1
+                : 0
       }
     },
     97895: (e, t, n) => {

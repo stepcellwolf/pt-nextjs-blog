@@ -25,8 +25,8 @@
         return r instanceof Element
           ? r
           : e && e.ownerDocument && e.ownerDocument.activeElement
-          ? e.ownerDocument.activeElement
-          : null
+            ? e.ownerDocument.activeElement
+            : null
       }
       function f(e, t) {
         let n = d(e)

@@ -661,8 +661,8 @@
         return /Windows/.test(navigator.userAgent)
           ? 'windows'
           : /Macintosh/.test(navigator.userAgent)
-          ? 'mac'
-          : null
+            ? 'mac'
+            : null
       }
       function o(e) {
         let t = (e.getAttribute('data-platforms') || '').split(','),
@@ -1285,10 +1285,10 @@
           ('private' === e.getAttribute('data-default') && n && !n.disabled
             ? (o = n)
             : 'internal' === e.getAttribute('data-default') && r && !r.disabled
-            ? (o = r)
-            : t && !t.disabled
-            ? (o = t)
-            : r && !r.disabled && (o = r),
+              ? (o = r)
+              : t && !t.disabled
+                ? (o = t)
+                : r && !r.disabled && (o = r),
           n && !n.disabled && 'member' === q ? (o = n) : t && !t.disabled && q && (o = t),
           !o)
         )
@@ -1597,8 +1597,8 @@
             (t.checked
               ? ((n.checked = !1), (n.disabled = !0))
               : '1' === r.value
-              ? ((n.checked = !0), (n.disabled = !0))
-              : (n.disabled = !1))
+                ? ((n.checked = !0), (n.disabled = !0))
+                : (n.disabled = !1))
         }),
         (0, g.N7)('.js-latest-release-checkbox', function (e) {
           let t = e.closest('form').querySelector('#is_stored_latest'),

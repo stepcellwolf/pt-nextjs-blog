@@ -244,12 +244,12 @@
               'Enter' === e.key && this.selectedItem
                 ? (this.selectedItem?.activate(this, e), e.preventDefault(), e.stopPropagation())
                 : 'ArrowDown' === e.key
-                ? (this.navigateToItem(1), e.preventDefault(), e.stopPropagation())
-                : 'ArrowUp' === e.key
-                ? (this.navigateToItem(-1), e.preventDefault(), e.stopPropagation())
-                : this.isCopyEvent(e) &&
-                  this.selectedItem &&
-                  (this.selectedItem.copy(this), e.preventDefault(), e.stopPropagation())
+                  ? (this.navigateToItem(1), e.preventDefault(), e.stopPropagation())
+                  : 'ArrowUp' === e.key
+                    ? (this.navigateToItem(-1), e.preventDefault(), e.stopPropagation())
+                    : this.isCopyEvent(e) &&
+                      this.selectedItem &&
+                      (this.selectedItem.copy(this), e.preventDefault(), e.stopPropagation())
             }
             close(e) {
               if (e instanceof KeyboardEvent && 'Enter' !== e.key) return
@@ -472,8 +472,8 @@
             return this.topGroup
               ? 1
               : this.isModeActive()
-              ? 50
-              : e || CommandPaletteItemGroupElement.defaultGroupLimit
+                ? 50
+                : e || CommandPaletteItemGroupElement.defaultGroupLimit
           }
           get atLimit() {
             return this.list.children.length >= this.limit
@@ -487,10 +487,10 @@
             return this.topGroup
               ? 1
               : this.isModeActive()
-              ? CommandPaletteItemGroupElement.activeModeLimit
-              : r || 0 === r
-              ? r
-              : CommandPaletteItemGroupElement.defaultGroupLimit
+                ? CommandPaletteItemGroupElement.activeModeLimit
+                : r || 0 === r
+                  ? r
+                  : CommandPaletteItemGroupElement.defaultGroupLimit
           }
           atLimitForScopeType(e) {
             return this.list.children.length >= this.limitForScopeType(e)
@@ -1238,12 +1238,12 @@
         return e instanceof o.i
           ? 'access_policy_executed'
           : e instanceof i.d || e instanceof a.U || e instanceof s.Z
-          ? 'command_executed'
-          : e instanceof n.s
-          ? e.element?.newTabOpened
-            ? 'jump_to_new_tab'
-            : 'jump_to'
-          : 'activate'
+            ? 'command_executed'
+            : e instanceof n.s
+              ? e.element?.newTabOpened
+                ? 'jump_to_new_tab'
+                : 'jump_to'
+              : 'activate'
       }
     },
     89359: (e, t, r) => {

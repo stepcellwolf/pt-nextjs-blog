@@ -39,8 +39,8 @@
         return /Windows/.test(navigator.userAgent)
           ? 'windows'
           : /Macintosh/.test(navigator.userAgent)
-          ? 'mac'
-          : null
+            ? 'mac'
+            : null
       }
       function r(e) {
         let t = (e.getAttribute('data-platforms') || '').split(','),

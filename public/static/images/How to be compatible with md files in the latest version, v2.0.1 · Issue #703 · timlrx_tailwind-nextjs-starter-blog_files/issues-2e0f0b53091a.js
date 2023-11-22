@@ -25,8 +25,8 @@
         return o instanceof Element
           ? o
           : e && e.ownerDocument && e.ownerDocument.activeElement
-          ? e.ownerDocument.activeElement
-          : null
+            ? e.ownerDocument.activeElement
+            : null
       }
       function m(e, t) {
         let n = d(e)
@@ -1212,8 +1212,8 @@
           el === i.ALT
             ? t.setAttribute('aria-label', s)
             : el === i.META
-            ? t.setAttribute('aria-label', r)
-            : t.setAttribute('aria-label', o)
+              ? t.setAttribute('aria-label', r)
+              : t.setAttribute('aria-label', o)
       }
       function em(e) {
         let t = e.currentTarget,

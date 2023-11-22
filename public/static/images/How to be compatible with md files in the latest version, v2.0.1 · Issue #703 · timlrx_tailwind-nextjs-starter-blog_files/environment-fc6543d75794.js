@@ -32,13 +32,13 @@
                       void 0 !== arguments[0].left
                         ? arguments[0].left
                         : 'object' != typeof arguments[0]
-                        ? arguments[0]
-                        : t.scrollX || t.pageXOffset,
+                          ? arguments[0]
+                          : t.scrollX || t.pageXOffset,
                       void 0 !== arguments[0].top
                         ? arguments[0].top
                         : void 0 !== arguments[1]
-                        ? arguments[1]
-                        : t.scrollY || t.pageYOffset
+                          ? arguments[1]
+                          : t.scrollY || t.pageYOffset
                     )
                     return
                   }
@@ -58,13 +58,13 @@
                       void 0 !== arguments[0].left
                         ? arguments[0].left
                         : 'object' != typeof arguments[0]
-                        ? arguments[0]
-                        : 0,
+                          ? arguments[0]
+                          : 0,
                       void 0 !== arguments[0].top
                         ? arguments[0].top
                         : void 0 !== arguments[1]
-                        ? arguments[1]
-                        : 0
+                          ? arguments[1]
+                          : 0
                     )
                     return
                   }
@@ -87,13 +87,13 @@
                         void 0 !== arguments[0].left
                           ? ~~arguments[0].left
                           : 'object' != typeof arguments[0]
-                          ? ~~arguments[0]
-                          : this.scrollLeft,
+                            ? ~~arguments[0]
+                            : this.scrollLeft,
                         void 0 !== arguments[0].top
                           ? ~~arguments[0].top
                           : void 0 !== arguments[1]
-                          ? ~~arguments[1]
-                          : this.scrollTop
+                            ? ~~arguments[1]
+                            : this.scrollTop
                       )
                       return
                     }
@@ -176,8 +176,8 @@
             return 'Y' === t
               ? e.clientHeight + l < e.scrollHeight
               : 'X' === t
-              ? e.clientWidth + l < e.scrollWidth
-              : void 0
+                ? e.clientWidth + l < e.scrollWidth
+                : void 0
           }
           function u(e, o) {
             var r = t.getComputedStyle(e, null)['overflow' + o]
@@ -603,11 +603,11 @@
             'number' == typeof window.innerWidth
               ? ((t = window.innerWidth), (e = window.innerHeight))
               : null != document.documentElement && null != document.documentElement.clientWidth
-              ? ((t = document.documentElement.clientWidth),
-                (e = document.documentElement.clientHeight))
-              : null != document.body &&
-                null != document.body.clientWidth &&
-                ((t = document.body.clientWidth), (e = document.body.clientHeight)),
+                ? ((t = document.documentElement.clientWidth),
+                  (e = document.documentElement.clientHeight))
+                : null != document.body &&
+                  null != document.body.clientWidth &&
+                  ((t = document.body.clientWidth), (e = document.body.clientHeight)),
             `${t}x${e}`
           )
         } catch (e) {

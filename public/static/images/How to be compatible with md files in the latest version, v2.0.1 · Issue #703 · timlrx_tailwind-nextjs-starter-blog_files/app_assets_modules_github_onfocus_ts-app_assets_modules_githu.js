@@ -292,8 +292,8 @@
                   ? b(e)
                   : L(e)
                 : l.top <= H(n, o)
-                ? w(e)
-                : t && L(e)
+                  ? w(e)
+                  : t && L(e)
             } else l.top - H(n, o) < 0.1 ? w(e) : b(e)
           }
       }
