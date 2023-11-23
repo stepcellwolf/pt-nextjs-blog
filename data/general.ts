@@ -1,7 +1,6 @@
 export const generalData = {
   name: 'Predrag Tasevski',
-  jobTitle:
-    'Cyber Security Trailblazer | Privacy by Design Advocate | Certified IT Expert | DPO, and more',
+  jobTitle: 'Cyber Security & Privacy by Design Advocate | Certified ISO, DPO, and more',
   website: 'https://www.predragtasevski.com',
   avatar: 'https://gitlab.com/uploads/-/system/user/avatar/8507728/avatar.png',
   about:

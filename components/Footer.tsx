@@ -34,9 +34,8 @@ export default function Footer() {
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <strong>Privacy statement:</strong> I use{' '}
           <Link href="https://www.goatcounter.com/">GoatCounter</Link> to collect and report
-          information on how my website is used to improve it. Advertising or tracking cookies are
-          not kept. The information I gather doesn't tell me who someone is or how they use the
-          website.
+          information on how my website is used. Advertising or tracking cookies are not kept. The
+          information I gather doesn't tell me who someone is or how they use the website.
         </div>
       </div>
     </footer>
