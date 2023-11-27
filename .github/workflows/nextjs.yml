@@ -64,8 +64,7 @@ jobs:
         run: npx contentlayer build
       - name: Build project assets
         run: npm run build
-        env:
-          ${{ vars.ENV_CONTEXT_VAR }}
+        env_var: ${{ vars.ENV_CONTEXT_VAR }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
