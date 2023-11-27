@@ -3,7 +3,8 @@ const siteMetadata = {
   title: 'Predrag Tasevski - Pece Blog',
   author: 'Predrag Tasevski',
   headerTitle: 'Predrag Tasevski',
-  description: 'Predrag - Pece, Cybersecurity & Privacy by Design Advocate | Certified ISO, DPO, and more',
+  description:
+    'Predrag - Pece: Cybersecurity & Privacy by Design Advocate | Certified ISO, DPO, and more',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://predragtasevski.com/',

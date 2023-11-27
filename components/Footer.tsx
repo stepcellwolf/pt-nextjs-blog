@@ -21,21 +21,47 @@ export default function Footer() {
           <div>{` • `}</div>
           <div>{`© ${new Date().getFullYear()}`}</div>
           <div>{` • `}</div>
-          <Link href="/">{siteMetadata.title}</Link>. Licensed under{' '}
-          <Link href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1">
+          <Link
+            href="/"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          >
+            {siteMetadata.title}
+          </Link>
+          . Licensed under{' '}
+          <Link
+            href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          >
             CC BY-NC 4.0
           </Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="https://github.com/timlrx/tailwind-nextjs-starter-blog">
+          <Link
+            href="https://github.com/timlrx/tailwind-nextjs-starter-blog"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          >
             Tailwind Nextjs Theme
           </Link>
         </div>
         <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <strong>Privacy statement:</strong> I use{' '}
-          <Link href="https://www.goatcounter.com/">GoatCounter</Link> to collect and report
-          information on how my website is used. Advertising or tracking cookies are not kept. The
-          information I gather doesn't tell me who someone is or how they use the website.
+          <Link
+            href="https://www.goatcounter.com/"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+          >
+            GoatCounter
+          </Link>{' '}
+          to collect and report information on how my website is used. Advertising or tracking
+          cookies are not kept. The information I gather doesn't tell me who someone is or how they
+          use the website.
         </div>
       </div>
     </footer>

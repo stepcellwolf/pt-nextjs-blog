@@ -142,12 +142,22 @@ export default function Photography() {
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             Photographing by Predrag Tasevski is licensed under a{' '}
             <Link
-              href="http://creativecommons.org/licenses/by-nc-nd/2.5/mk/"
+              href="https://creativecommons.org/licenses/by-nc/4.0/?ref=chooser-v1"
               className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              rel="noopener noreferrer"
+              target="_blank"
             >
-              Creative Commons Attribution-Noncommercial-No Derivative Works 2.5 Macedonia License
+              CC BY-NC 4.0 DEED
             </Link>
-            . Based on a work at predragtasevski.com.
+            . Based on a work at{' '}
+            <Link
+              href="https://predragtasevski.com/"
+              className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              predragtasevski.com.
+            </Link>
             <br />
             Permissions beyond the scope of this license or contact me at pece at
             predragtasevski.com
