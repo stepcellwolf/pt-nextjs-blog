@@ -57,6 +57,14 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install NPM dependencies
         run: npm install
+      - name: Build environment
+        run: |
+          touch .env 
+          echo NEXT_PUBLIC_GISCUS_CATEGORY=${{ vars.NEXT_PUBLIC_GISCUS_CATEGORY }} >> .env
+          echo NEXT_PUBLIC_GISCUS_CATEGORY_ID=${{ vars.NEXT_PUBLIC_GISCUS_CATEGORY_ID }} >> .env
+          echo NEXT_PUBLIC_GISCUS_REPO=${{ vars.NEXT_PUBLIC_GISCUS_REPO }} >> .env
+          echo NEXT_PUBLIC_GISCUS_REPOSITORY_ID=${{ vars.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }} >> .env
+          echo YARN_ENABLE_IMMUTABLE_INSTALLS=${{ vars.YARN_ENABLE_IMMUTABLE_INSTALLS }} >> .env
       - name: Build contenlayer
         run: npx contentlayer build
       - name: Build project assets
