@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Predrag Tasevski',
   headerTitle: 'Predrag Tasevski',
   description:
-    'Predrag - Pece: Cybersecurity & Privacy by Design Advocate | Certified ISO, DPO, and more',
+    'Predrag - Pece: Cybersecurity & Privacy by Design Advocate | Certified ISO, DPO, and more.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://predragtasevski.com/',
