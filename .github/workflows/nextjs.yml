@@ -10,9 +10,6 @@ on:
     branches: ['main']
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-env:
-  # Setting an environment variable with the value of a configuration variable
-  env_var: ${{ vars.ENV_CONTEXT_VAR }}
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -65,12 +62,10 @@ jobs:
       - name: Build project assets
         run: npm run build
         env:
-          # Setting an environment variable with the value of a configuration variable
-          env_var: |
-            ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY }}
-            ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
-            ${{ secrets.NEXT_PUBLIC_GISCUS_REPO }}
-            ${{ secrets.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
+          NEXT_PUBLIC_GISCUS_CATEGORY: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY }}
+          NEXT_PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
+          NEXT_PUBLIC_GISCUS_REPO: ${{ secrets.NEXT_PUBLIC_GISCUS_REPO }}
+          NEXT_PUBLIC_GISCUS_REPOSITORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
