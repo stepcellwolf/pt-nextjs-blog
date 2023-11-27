@@ -64,11 +64,6 @@ jobs:
         run: npx contentlayer build
       - name: Build project assets
         run: npm run build
-        env: 
-          NEXT_PUBLIC_GISCUS_CATEGORY=${{ env.NEXT_PUBLIC_GISCUS_CATEGORY }}
-          NEXT_PUBLIC_GISCUS_CATEGORY_ID=${{ env.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
-          NEXT_PUBLIC_GISCUS_REPO=${{ env.NEXT_PUBLIC_GISCUS_REPO }}
-          NEXT_PUBLIC_GISCUS_REPOSITORY_ID=${{ env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
