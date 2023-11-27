@@ -66,7 +66,11 @@ jobs:
         run: npm run build
         env:
           # Setting an environment variable with the value of a configuration variable
-          env_var: ${{ vars.ENV_CONTEXT_VAR }}
+          env_var: |
+            ${{ vars.NEXT_PUBLIC_GISCUS_CATEGORY }}
+            ${{ vars.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
+            ${{ vars.NEXT_PUBLIC_GISCUS_REPO }}
+            ${{ vars.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
