@@ -13,7 +13,7 @@ export const resumeData = [
         title: 'Founder and CEO',
         subTitle: 'Unicis.Tech OÜ, Tallinn, EE',
         date: 'September 2022 - Present',
-        description: `Start-up building an open source SaaS Platform and Atlassian apps for compliance, security and privacy teams.`,
+        description: `Start-up building an open source GRC (Governance, risk management, and compliance) SaaS Platform and Atlassian apps for compliance, security and privacy teams.`,
         href: 'https://www.unicis.tech/',
       },
       {
@@ -37,7 +37,7 @@ export const resumeData = [
         href: 'https://eyeo.com/',
       },
       {
-        title: 'Senior Cloud Security Engineer (_Acting as a Head of IT-Security_)',
+        title: 'Senior Cloud Security Engineer (Acting as a Head of IT-Security)',
         subTitle: 'Verimi GmbH, Berlin, DE',
         date: 'November 2018 - May 2019',
         description: `Information Security Leader responsible for defining, implementing, and enhancing the company's security posture.`,
