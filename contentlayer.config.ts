@@ -27,6 +27,10 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 const computedFields: ComputedFields = {
   readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
+  wordCount: {
+    type: 'number',
+    resolve: (doc) => doc.body.raw.split(/\s+/gu).length,
+  },
   slug: {
     type: 'string',
     resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, ''),

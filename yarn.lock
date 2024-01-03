@@ -6434,11 +6434,6 @@
   dependencies:
     "picomatch" "^2.2.1"
 
-"reading-duration@^1.1.2":
-  "integrity" "sha512-rm/bVuqGCZ6Ox1R9lIkgOa5+PG96MDD5n8w62k/6+woRTGT3Wss76c/LBo9hBgpUVQSYqw2uSyshBKOksrQ7xA=="
-  "resolved" "https://registry.npmjs.org/reading-duration/-/reading-duration-1.1.2.tgz"
-  "version" "1.1.2"
-
 "reading-time@1.5.0":
   "integrity" "sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg=="
   "resolved" "https://registry.npmjs.org/reading-time/-/reading-time-1.5.0.tgz"
