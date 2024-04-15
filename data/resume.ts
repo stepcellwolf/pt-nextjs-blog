@@ -151,6 +151,11 @@ export const resumeData = [
     title: 'Certifications',
     items: [
       {
+        title: 'Certified Payment Security Practitioner v2.0',
+        subTitle: 'Certificate No: CPSP01042401.',
+        date: 'April 2024',
+      },
+      {
         title: 'Certified Data Protection Officer (DPO)',
         subTitle: 'Certificate No: 001/DP0/2023.',
         date: 'February 2023',
