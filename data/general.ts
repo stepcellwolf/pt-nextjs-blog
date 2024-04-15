@@ -1,10 +1,10 @@
 export const generalData = {
   name: 'Predrag Tasevski',
-  jobTitle: 'Cyber Security & Privacy by Design Advocate | Certified ISO, DPO, and more',
+  jobTitle: 'Cyber Security & Privacy by Design Advocate | Certified ISO, DPO, CPSP and more',
   website: 'https://www.predragtasevski.com',
   avatar: 'https://gitlab.com/uploads/-/system/user/avatar/8507728/avatar.png',
   about:
-    'Predrag has worked in cyber and IT security for more than a decade. He knows how to make security and privacy work by design and default. Working as a director, head of IT security, ISO, senior cloud security engineer, and consultant. He is certified in ISO/IEC 27001 and ISO/EC 20000-1:2018. He also works as a Data Protection Officer (DPO), CyberSec First Responder, Project Management Professional (PMP), Scrum Master, MCT, and Cloud Security Engineer. He holds a master’s degree in cyber security and a post-graduate master’s degree in security in computer systems and communications.',
+    'Predrag has worked in cyber and IT security for more than a decade. He knows how to make security and privacy work by design and default. Working as a director, head of IT security, ISO, senior cloud security engineer, and consultant. He is certified in ISO/IEC 27001 and ISO/EC 20000-1:2018. He also works as a Data Protection Officer (DPO), Certified Payment Security Practitioner (CPSP) v2.0, CyberSec First Responder, Project Management Professional (PMP), Scrum Master, MCT, and Cloud Security Engineer. He holds a master’s degree in cyber security and a post-graduate master’s degree in security in computer systems and communications.',
   contacts: [
     {
       label: 'Email',
