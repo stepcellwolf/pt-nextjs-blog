@@ -62,10 +62,9 @@ jobs:
       - name: Check Output Directory
         run: |
           ls -la ./out
-          cat ./out/index.html  # To ensure the file exists and contains what you expect
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: ./out
