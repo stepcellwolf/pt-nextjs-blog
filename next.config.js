@@ -15,14 +15,6 @@ const nextConfig = {
     domains: ['picsum.photos'],
     unoptimized: true, // Required for GitHub Pages
   },
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        // headers: securityHeaders,
-      },
-    ];
-  },
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.svg$/,
@@ -31,7 +23,10 @@ const nextConfig = {
 
     return config;
   },
-  output: 'export', // Required for static export
+  output: 'export', 
+  images: {
+    unoptimized: true,
+  },// Required for static export
 };
 
 module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
