@@ -59,9 +59,8 @@ jobs:
           NEXT_PUBLIC_GISCUS_REPO: ${{ secrets.NEXT_PUBLIC_GISCUS_REPO }}
           NEXT_PUBLIC_GISCUS_REPOSITORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
 
-      - name: Check Output Directory
-        run: |
-          ls -la ./out
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
