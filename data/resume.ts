@@ -3,7 +3,7 @@ export const resumeData = [
     title: 'Work Experience',
     items: [
       {
-        title: 'Head of Cybersecurity',
+        title: 'Director of Cybersecurity',
         subTitle: 'Mondu GmbH, Berlin, DE',
         date: 'June 2022 - Present',
         description: `Information Security and Privacy Specialist responsible for developing, implementing, and overseeing the company's security program.`,
