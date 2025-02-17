@@ -53,11 +53,20 @@ jobs:
         run: |
           npm run build
           npm run export
+          ls -la ./out  # Check if the export output exists
         env:
           NEXT_PUBLIC_GISCUS_CATEGORY: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY }}
           NEXT_PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
           NEXT_PUBLIC_GISCUS_REPO: ${{ secrets.NEXT_PUBLIC_GISCUS_REPO }}
           NEXT_PUBLIC_GISCUS_REPOSITORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
+
+      - name: Verify output directory
+        run: |
+          if [ -d "./out" ]; then
+            echo "Export directory exists"
+          else
+            echo "Export directory does not exist" && exit 1
+          fi
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
