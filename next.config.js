@@ -1,83 +1,32 @@
-name: Deploy Next.js site to Pages
+const { withContentlayer } = require('next-contentlayer');
 
-on:
-  push:
-    branches: ['main']
-  workflow_dispatch:
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
+  eslint: {
+    dirs: ['app', 'components', 'layouts', 'scripts'],
+  },
+  images: {
+    domains: ['picsum.photos'],
+    unoptimized: true, // Required for GitHub Pages
+  },
+  webpack: (config, options) => {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
 
-concurrency:
-  group: 'pages'
-  cancel-in-progress: false
+    return config;
+  },
+  output: 'export', 
+  images: {
+    unoptimized: true,
+  },// Required for static export
+};
 
-jobs:
-  build:
-    name: Build Next.js Site
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: npm
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: next
-
-      - name: Restore Cache
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.npm
-            .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-nextjs-
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build and Export
-        run: |
-          npm run build
-          npx contentlayer build
-          npm run export
-          ls -la ./out  # Debugging: Check if the export output exists
-        env:
-          NEXT_PUBLIC_GISCUS_CATEGORY: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY }}
-          NEXT_PUBLIC_GISCUS_CATEGORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_CATEGORY_ID }}
-          NEXT_PUBLIC_GISCUS_REPO: ${{ secrets.NEXT_PUBLIC_GISCUS_REPO }}
-          NEXT_PUBLIC_GISCUS_REPOSITORY_ID: ${{ secrets.NEXT_PUBLIC_GISCUS_REPOSITORY_ID }}
-
-      - name: Verify output directory
-        run: |
-          if [ -d "./out" ]; then
-            echo "Export directory exists"
-          else
-            echo "Export directory does not exist" && exit 1
-          fi
-
-      - name: Upload Artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
