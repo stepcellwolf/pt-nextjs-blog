@@ -1,9 +1,7 @@
-const { withContentlayer } = require('next-contentlayer');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
@@ -24,4 +22,6 @@ const nextConfig = {
   output: 'export', // Required for static export
 };
 
-module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
+const isExportMode = process.env.NEXT_PHASE === 'phase-export';
+
+module.exports = isExportMode ? nextConfig : withBundleAnalyzer(require('next-contentlayer').withContentlayer(nextConfig));
