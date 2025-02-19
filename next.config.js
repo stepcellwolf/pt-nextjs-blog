@@ -1,5 +1,4 @@
 const { withContentlayer } = require('next-contentlayer');
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -15,18 +14,14 @@ const nextConfig = {
     domains: ['picsum.photos'],
     unoptimized: true, // Required for GitHub Pages
   },
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
     return config;
   },
-  output: 'export', 
-  images: {
-    unoptimized: true,
-  },// Required for static export
+  output: 'export', // Required for static export
 };
 
 module.exports = withBundleAnalyzer(withContentlayer(nextConfig));
