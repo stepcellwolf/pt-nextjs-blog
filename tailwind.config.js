@@ -8,9 +8,9 @@ module.exports = {
         DEFAULT: {
           css: {
             a: {
-              color: theme('--color-primary-500'),
+              color: 'oklch(62.31% 0.188 259.81)', // Custom link color
               '&:hover': {
-                color: theme('--color-primary-600'),
+                color: 'oklch(72% 0.2 259.81)', // Slightly brighter on hover
               },
               code: { color: theme('--color-primary-400') },
             },
@@ -29,9 +29,9 @@ module.exports = {
         invert: {
           css: {
             a: {
-              color: theme('--color-pink-500'),
+              color: 'oklch(62.31% 0.188 259.81)', // Link color in dark mode
               '&:hover': {
-                color: theme('--color-primary-400'),
+                color: 'oklch(72% 0.2 259.81)', // Brighter hover color in dark mode
               },
               code: { color: theme('--color-primary-400') },
             },
@@ -44,4 +44,4 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-}
+};
