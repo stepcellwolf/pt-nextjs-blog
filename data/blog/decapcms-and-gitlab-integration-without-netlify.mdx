@@ -11,11 +11,11 @@ Due to privacy concerns and not wanting to use another authentication service pr
 
 Here is how you should [begin](https://decapcms.org/docs/install-decap-cms/).
 
-
 ## GitLab
 
 After installing DecapCMS in your website generator you will need to manage applications that can use GitLab as an OAuth provider, and applications that you've authorized to use your account.
 To do this follow the following steps:
+
 1. Click on your profile icon.
 2. Click Prefference -> Applications
 3. Add new application
@@ -29,7 +29,7 @@ To do this follow the following steps:
 
 This file is only for blog posts. You can add more [widgets](https://decapcms.org/docs/widgets/) if needed, like for pages, documents, and more.
 
-``` yml
+```yml
 backend:
   name: gitlab
   repo: repo/website
@@ -49,67 +49,49 @@ local_backend: true
 
 locale: en
 
-media_folder: "static/img"
-public_folder: "/img"
+media_folder: 'static/img'
+public_folder: '/img'
 
 editor:
   preview: true
 
 slug:
-  encoding: "ascii"
+  encoding: 'ascii'
   clean_accents: true
-  sanitize_replacement: "_"
+  sanitize_replacement: '_'
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'blog'
     create: true
-    slug: "{{date}}-{{id}}"
-    identifier_field: "title"
-    extension: "mdx"
-    format: "frontmatter"
+    slug: '{{date}}-{{id}}'
+    identifier_field: 'title'
+    extension: 'mdx'
+    format: 'frontmatter'
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Slug", name: "slug ", widget: "{{slug}}" }
-      - {
-          label: "Tags",
-          name: "tags",
-          widget: "list",
-          default: [],
-          required: false,
-        }
-      - { label: "Draft", name: "draft", widget: "boolean", default: true, required: false }
-      - {
-          label: "Date",
-          name: "date",
-          widget: "datetime",
-          format: "YYYY-MM-DD",
-          timeFormat: false,
-        }
-      - { label: "Description", name: "description", required: false }
-      - {
-          label: "Image",
-          name: "image",
-          widget: "image",
-          allow_multiple: false,
-          required: false,
-        }
-      - label: "Author Title"
-        name: "authors"
-        widget: "list"
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Slug', name: 'slug ', widget: '{{slug}}' }
+      - { label: 'Tags', name: 'tags', widget: 'list', default: [], required: false }
+      - { label: 'Draft', name: 'draft', widget: 'boolean', default: true, required: false }
+      - { label: 'Date', name: 'date', widget: 'datetime', format: 'YYYY-MM-DD', timeFormat: false }
+      - { label: 'Description', name: 'description', required: false }
+      - { label: 'Image', name: 'image', widget: 'image', allow_multiple: false, required: false }
+      - label: 'Author Title'
+        name: 'authors'
+        widget: 'list'
         fields:
-          - label: "Author Name"
-            name: "name"
-            widget: "string"
-          - label: "Author Title"
-            name: "title"
-            widget: "string"
-          - label: "Author Image"
-            name: "image_url"
-            widget: "image"
+          - label: 'Author Name'
+            name: 'name'
+            widget: 'string'
+          - label: 'Author Title'
+            name: 'title'
+            widget: 'string'
+          - label: 'Author Image'
+            name: 'image_url'
+            widget: 'image'
             allow_multiple: true
-      - { label: "Body", name: "body", widget: "markdown" }
-  ```
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+```
 
 After deployment, visit your website https://domain.tld/admin. Click on Login with GitLab. It will redirect you to grant authorization to Decap CMS. Click on Authorize and you should be able to see your blog post content.
