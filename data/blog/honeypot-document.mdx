@@ -1,0 +1,181 @@
+---
+title: 'Honeypot document'
+date: 2012-02-16 00:00
+tags: [honeypot document, cyber security, honeypot]
+---
+
+# INTRODUCTION
+
+The main goal of laboratory report is to identify possible leaked/stolen
+information, documents from our system without recognising that attacker
+had an access. Thus access of the document will inform us immediately
+with the information of the burglar. The report should highlight the
+following aspects:
+
+- Constructed an document as non malicious code, for instance honey
+  document that will help us to track from where, who, information
+  about the system, etc. is using our document.
+- Detail description of process, how did we build the document and the
+  idea behind the tracking system.
+- Description of needed infrastructure that is tracking the document.
+
+The laboratory report is created by a team of 7 members. Where each
+member had own task to accomplish. Moreover, to be more contingent the
+unknown person has gain access to our computer/laptop. Thereby he is
+looking for interesting name of file, folder, etc. that most likely will
+have a content of interesting data, information for his purpose. After
+he downloaded file/folder from our system the intruder will open this
+file in his system assuming that contains very important
+personal/corporate information. However, by opening this file/folder,
+document it will send us immediately leaked information about his system
+to our server and additionally an e-mail. This process and procedures
+that are behind the honeypot document, or with other words trap set to
+detect, deflect, or in some manner counteract attempts at unauthorized
+use of information systems [1] is described in following sections.
+Furthermore, the coding of the honeypot document is done in HTML file
+with additional java script queries, where detail information and
+construction are displayed in Honeypot section. Meanwhile in Appendix
+section we provide the code of the honeypot document and additional what
+is the leaked/collected information of the intruder system, with other
+word, content illustration of mail and server logs.
+
+Finally the conclusion made of the laboratory report will be concise in
+summary section.
+
+# HONEYPOT IDEA
+
+HTML file We can name the file online banking or etc. cause it is html
+and it is more convincing way that the attacker will assume that this is
+an not only a online banking link but yet an the stored cookies and
+other leaked information. The honeypot file has inline javascript that
+will collect as much information as it can from the users browser, make
+it into a JSON object and create a request to our server using that
+information. The request will return an image, so nothing will be
+broken, however on our server we decode the information and send
+ourselves an alert email, that someone has accessed that document and
+where the accessing came from. There is also an image embedded that
+requests it from our server- these requests are logged and we see the IP
+address of the opener. This is as a backup in case the user doesn’t
+allow javascript to execute.
+
+**How we lure an attacker into trap**
+
+To discover the identity of attacker and get information, she/he has to
+open html file. Besides setting up honeypot from technical point of
+view, we have to make document attractive. On our system all the
+documents will be protected by (different) passwords. We can have same
+password for files with same extensions (for example, for PDFs or for MS
+Word documents). In html file, we store these passwords. The name of
+html document should be corresponding (“file passwords” for example).
+Attacker will need additional time to crack the passwords, so we are
+offering easy, quick way to get over additional obstacles. Actually, in
+html file passwords should be correct not no make the attacker
+suspicious. Attacker may be suspicious why we stored this kind of
+information in html file, but it can be explained with the following
+reasons: a) to open html (with notepad or browser for example) is
+quicker than opening .pdf and .doc (by Adobe Reader and MS Word
+respectively) b) html has different extension (.html) that PDF or MS
+Word documents, so it has different icon in GUI. If you put a lot of
+different files in a folder, html is much easier to find with a glance
+among PDFs and DOCs.
+
+**What information we get**
+
+The honeypot is scripted to give us the following information about the
+attacker: first of all IP address. Time, hen the attacker accessed the
+honeypot file. Except that, we also get information about user agent,
+OS, language and other details about attacker’s system. For this
+concrete task that should be enough. The script is configurable to get
+some additional information too. As our plan is to simply gather
+information on our infiltrator, it is essential to avoid being malicious
+with our code. It will not alter target’s system or bypass any
+restrictions of it. The solution will not announce itself and will be as
+stealthy as possible.
+
+The information is sent to mail. For the example of sent e-mail, please
+refer to Appendix 2.
+
+# HONEYPOT INFRASTRUCTURE
+
+We need a Web server running PHP. The PHP script will collect the JSON
+data received
+
+from the attacker, format it nicely and send via email to people who
+will process it. If
+
+JavaScript is not enabled on the attacker’s side we rely on the fact
+that a picture is
+
+accessed from the honeypot html file. The server has to serve this image
+and the request
+
+for it of course appears in the web server access logs. This information
+again is processed by the same PHP script mentioned above and forwarded
+to analysts. Another alternative way to inform security personnel about
+this honeypot image being accessed is the Simple Event Corelator (SEC)
+written by Risto Vaarandi [2]. This software is freely available under
+GPL license. We could write a rule for SEC that would monitor the web
+server access log file for the specific image file request and send an
+email with the IP address from which the image was accessed. The rule
+that is used for SEC can be found in Appendix 3. The content we are
+looking for in the log file may look like this:
+
+\`\`\`192.168.1.34 - - [07/Dec/2011:19:16:07 +0200] "GET /honey.png
+HTTP/1.1" 200 1932\`\`\`
+
+# SUMMARY
+
+Nowadays the most common vector in unauthorized access into the system
+is followed by stealing important data, either is from personal computer
+or corporate network. Therefore, solution of implementing a trap for
+detecting, and deflecting the attacker of collecting valuable
+information is important. This laboratory report consists solution for
+future detection, by creating an honeypot document that will help us to
+collect data from the attacker. The document it self it is not an
+malicious code, likewise does not corrupt or infect the attacker system.
+Solution provided above is designed with an simple infrastructure which
+help us to identify identity of attacker in different operation system.
+
+Moreover, the honeypot document provides us an information of what is
+the attacker or user of this document operation system, which browser he
+is using, what plugins are installed in the browser and additional the
+time of accessing the file and attached IP address. Thereby, by
+identifying the above information will guide us in further steps. For
+instance by identifying his IP address we can find his location, ISP,
+etc. However, is this above provided information enough? The answer to
+the question is simple, indeed it is, cause we don’t need more. The idea
+in this laboratory is not to find or assail the attacker, but it is just
+to identify, and realize that someone had an unauthorized access to the
+system and to distinguish his identity. Consequently, from the above we
+can conclude that we rather gather the information from the attacker
+then to attack him back.
+
+# APPENDICES
+
+Appendix 1 is the HTML and Java script code presented and in addition in
+Appendix 2 we present the e-mail received after the attacker has open
+the document. SEC are described in Appendix 3.
+
+# Appendix 1
+
+HTML + Java script code presented below:
+
+## Appendix 2
+
+What we receive via email:
+
+## Appendix 3
+
+SEC rule file for web server log monitoring (will work only for IPv4).
+Alerts the root user via email and suppresses alerts for one hours for
+the same IP address
+
+# Bibliography
+
+[1] Wikipedia, Honeypot (computing), 4 December 2011, [Link](<https://en.wikipedia.org/wiki/Honeypot_(computing)>).
+
+[2] Risto Vaarandi, SEC man page, NA, [Link](https://simple-evcorr.sourceforge.net/man.html](/web/20120310213401/https://simple-evcorr.sourceforge.net/man.html).
+
+The above post is written by: Predrag Tasevski, Robert Pallas, Kuuno
+Pärnoja, Mikheil Basilaia, Karl Düüna, Roman Stepanenko and Heliand
+Dema.

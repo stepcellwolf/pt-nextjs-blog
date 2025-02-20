@@ -1,0 +1,350 @@
+---
+title: 'Script Kiddie'
+date: 2011-10-19 23:00
+tags:
+  [
+    attacks,
+    cyber security,
+    DDoS,
+    internet,
+    script kiddie,
+    security,
+    server attack,
+    wordpress attack,
+  ]
+---
+
+# PURPOSE and SCENARIO
+
+The goal of this laboratory test is to make effort to attack server and
+to deface website. Here is the scenario: your client is worried about
+some stuff posted on a blog. They ask You to take care of it. They have
+a throwaway “script kiddie”[Script kiddie] in a third world country, who
+will mount the attack so You don’t need to worry about hiding the
+attackers identity.
+
+Therefore, we need to devise a way to attack wordpress (default
+installation) based site to render it unusable (page view times over 60
+seconds). Attack resources: one PC with Microsoft Windows XP, a script
+kiddie, internet connection of 2Mbit/s. In addition, server has to stay
+down for two days and script kiddie has up to 1 day to set up the
+attack.
+
+For scenario above their three different proposals from the fallow
+students. Each proposal is described in section Proposals and their
+effectiveness, installation process and the evaluation of the efficient
+use of available resources.
+
+Firstly, easy solution for limiting the internet connection of 2Mbit/s
+by Oracle VirtualBox configuration manager. Secondly, the bandwidth
+capacity of the connection and their performance is measured by vnstat1
+for graphs to display our utilization. The steps are vivid on section
+Methods.
+
+Finally, providing measurement results with different proposals will
+help us to identify the most beneficial proposal for above scenario,
+declared in Conclusion section.
+
+Moreover, after each attack, test the virtual server environment is
+restarted, because of the affective situation that server after attack
+needs time to recover.
+
+# METHODS
+
+Because of requirements of our scenario we need to limit the internet
+connection of 2 Mbit/s and to provide graphs that can help as with the
+measurement results to conclude which proposals is more competent.
+Therefore, Method 1 is describing the step how we limited the connection
+bandwidth and Method 2 providing as solution how to setup that can help
+you in measuring the speed and the bandwidth.
+
+## METHOD 1
+
+For limiting the internet traffic of the server we have to do the
+following steps in command prompt. The following solution is gathered
+from Manual of Oracle Virtualbox, Chapter 8 [User Manual].
+
+Limiting VirtualBox – virtual environment speed of network interface:
+
+```
+VBoxManage modifyvm "[name of virtualbox]" --nicspeed2 2048
+```
+
+Where you need to replace name of virtual box with real one, and specie
+which network interface adapter you wont to limited. In the above
+illustration is only second network adapter affected and then you set
+the limitation, in our case is 2 Mbit/s.
+
+Furthermore, to make sure that the result have been effective please use
+the following command:
+
+```
+VBoxManage showvminfo "[name of virtualbox]"
+```
+
+Results and information important to be aware refer to Appendix 1.
+
+## METHOD 2
+
+We are going to install an application that will help us to gather a
+visual graphs of traffic manipulation of script kiddie. The application
+is vnstat.
+
+In the server virtual environment in command prompt please type the
+following command:
+
+```
+    sudo apt-get install vnstat<br)
+```
+
+Next step is to select which interface should be monitored and create
+graphs. In our case is eth1, which is second network interface. For
+furthermore detailed installation process please refer to the following
+[link](https://www.4geeksfromnet.com/2009/04/graphical-bandwidth-monitor-for-ubuntu.html).
+
+To check if the installation process is finished please use your
+browser, as shown in illustration 1 and on the address bar type:
+https://192.168.56.102/vnstat
+
+Illustration 1: Vnstat PHP interface
+
+# PROPOSALS
+
+The three proposals are following and described in each different
+section and their results. The main measure goal which is going to grate
+for kiddie script is: easy to use instructions, the most efficient use
+of available resources and can the script be up to 1 day attacking.
+
+Moreover, the results will be provided with two different graphs in
+period of 5 minutes attack and 10 minutes attack. Which would guide us
+to compare which kiddie script has performed the attack more in force.
+
+## PROPOSAL 1
+
+This is the first proposal and the installation process instruction:
+Script kiddie uses a little program to connection flood the WordPress
+installation! The program uses Apache autobench to take the site down in
+seconds.
+
+Guide for the scipt Kiddie:
+
+1.  Download the program from [link](https://enos.itcollege.ee/~avein/anti2.rar).
+2.  Unpack and run AntiXakkerv2.0.exe
+3.  Enter the address for wordpress site and press the button
+
+Above script did no run/work on the VirtualMachine Windows XP.
+Therefore, from the same author we have other solution:
+
+1. [Download](https://enos.itcollege.ee/\~avein/anti.exe](https://enos.itcollege.ee/%7Eavein/anti.exe),
+   save it on Desktop
+
+2. Open Start menu, select run and type “cmd” into the box and press
+   enter
+
+3. Drag anti.exe file to the black box (commandline) , select the box
+   and type the address of your server ( eg. www.delfi.ee ) after the anti.exe
+
+For example, if the address for your webserver is 192.168.56.101 type
+the following:
+
+```
+anti.exe 192.168.56.101<br)
+
+```
+
+1.  Press enter and the site will go down very soon :=) P.S. This is
+    lightweight version tat doesnot use much bandwith and is targeted
+    against a bug in apache server :)
+
+### RESULT 1
+
+After running the first proposal we can see that the script kiddie does
+attack the server, but the server was reachable after a bit long delay,
+but still we could access to the wordpress.
+
+Here are some results graphs.
+
+1.  5 minutes attack
+
+Illustration 2: Proposal 1, 5 min, traffic graph
+
+1.  10 minutes attack
+
+Illustration 3: Proposal 1, 10 min, traffic graph
+
+On the one hand the script kiddie did attack the server, but on the
+other hand the server was still accessible. I’d like to conclude by
+stating that the above script did not meet our needs, and it did not
+stop, bring down the response time of the server.
+
+## PROPOSAL 2
+
+Second proposal and the installation process:
+
+1.  You (Script kiddie) download the file from [link](https://share.ee/x49176f).
+2.  You will get an warning message, but you continue to download anyway
+3.  In chrome it looks like this
+
+4.  Execute the file
+5.  Will get a warning but continue
+6.  Will look something like this
+
+7.  Insert the URL to attack and define how long you want to attack
+8.  Will look like
+
+9.  Enjoy
+
+The script is basic vbscript that will overwhelm the server by as many
+connections that are required to keep the server down for as long as you
+define.
+
+The above script did not work on the laboratory performance, because it
+had an code error. Therefore, for this proposal we are not able to
+provide you with the result graphs
+
+## PROPOSAL 3
+
+Third proposal and the installation process is listed below: There is a
+free and very easy Denial of service script written in PHP, called
+Keep-Dead (Version 1.14). You can download it from the following [link](https://www.esrun.co.uk/blog/imp/2011/03/Keep-Dead.zip)
+
+It is developed for a research purpose, but still we can use it for our
+scenario. The good think is primarily meant for use via the terminal;
+although it will also work if launched via the browser.
+
+1.  Unpack the Keep-Dead.zip
+2.  Open in notepad or any other text/script editor
+3.  On line \#26 change the
+    `$target_url = “https://www.example.com/wordpress/?s=%rand%”;` to our
+    targeted wordpress blog. We can stop even certain page or post in
+    wordpres or use of `%rand%` for a random value to be automatically
+    generated for each individual request • You can change the maximum
+    number of requests to be made on line \#32
+4.  Changeable is maximum number of requests to be made per connection
+    \#37, etc.
+5.  After setting the setting of our needs save the file.
+6.  And in terminal you need to run the following script:
+    `php –e keep-dead.php` or if you run a xamp or other webserver it is
+    possible to run the script from your browser.
+7.  You can terminate the script by pressing CTRL+C in terminal console
+    or stop/close the browser.
+
+For more information or video tutorials please refer to the following
+[link](https://www.esrun.co.uk/blog/keep-alive-dos-script/)
+
+If we follow the above steps we can perform our scenario 3 to make the
+server to stay down for two days or even more.
+
+There many ways to keep the server down for two days, this script for me
+is kind of easy usable. In addition, the author had provide and more
+details with following content: In addition of my proposal pls install
+the following [script](https://windows.php.net/downloads/releases/php-5.3.8-nts-Win32-VC9-x86.msi)
+in the installation process in the section of Select Web Server you wish
+to setup please chose Do not setup a web server -> Next click on the
+PHP small narrow down icon and select Entire future will be installed on
+local hard drive (second option) -> Next -> Install
+
+The results and graphs of the above proposal are demonstrated in the
+next section.
+
+This is the script that actually does the job and it keeps the server
+down until the script is down.
+
+### RESULT 3
+
+Test results are following:
+
+1. 5 minutes attack
+
+Illustration 4: Proposal 3, 5 min, traffic graph
+
+1.  10 minutes attack
+
+Illustration 5: Proposal 3, 10 min, traffic graph
+
+A case in point is that from the above graphs we can see that the server
+does get more traffic and it does get attacked by the script kiddie.
+Illustration 6, bellow demonstrated that actually the server is down, is
+not responding any more to requests.
+
+Illustration 6: Proposal 3, server down after trying to reach the blog
+
+# CONCLUSION
+
+There are three points that we should consider and to see which proposal
+was more accurate and it did the job that was required in the scenario.
+
+First I would like to start with rating from 1 to 5 each proposal.
+Higher score present better results. Which is proving our destination to
+hold down the server for longer then one day. The bellow table
+demonstrates which proposal has succeed.
+
+|                   | Proposal 1 | Proposal 2 | Proposal 3 |
+| ----------------- | ---------- | ---------- | ---------- |
+| Easy installation | 5          | 5          | 4          |
+| Server down       | 3          | 1          | 5          |
+| TOTAL             | 8          | 6          | 9          |
+
+On the scoring rate 3 of server down is means that the server was down,
+but after few seconds was retrievable. Where the highest score 5 means
+that the server was not retrievable during this proposal test until we
+shutdown or cancel the process of script kiddie. In addition, the
+Proposal 3 due to a code error was not able to perform attack, that is
+why it is graded with server down score of 1. Therefore, our winner for
+this laboratory test is Proposal 3 with script kiddie Keep-dead.
+
+The next issue that I would like to focus is to the network speed,
+tested with other tool bmon2 which manifests that the speed limit of the
+bandwidth did not go over the 2 Mbit/s.
+
+In conclusion, the above proposals are nice and good example to have an
+view of how and with what tools we should perform script kiddie
+techniques. How to shutdown access to a server. On the whole, it show as
+how to use tools and methods of measuring the bandwidth of network and
+how to limit the transfer in comfortable way.
+
+# APPENDIXES
+
+Appendix 1 is connected with the Method 1, which highlighted points are
+illustration on what information we should check, to clarify that the
+virtual environment has limitation of the network interface. Where
+Appendix 2 is for installation process of Ubuntu Server 10.04 LTS and
+wordpress, mysql installation.
+
+# APPENDIX 1
+
+```
+Name: ubuntu-serverGuest OS: UbuntuUUID: fe16451a-f8b1-4ceb-bb90-8650d08c3c0eConfig file: C:\Users\predrag\Documents\Master_CyberSecurity\VirtualBox VMs\ubuntu-server\ubuntu-server.vboxSnapshot folder: C:\Users\predrag\Documents\Master_CyberSecurity\VirtualBox VMs\ubuntu-server\SnapshotsLog folder: C:\Users\predrag\Documents\Master_CyberSecurity\VirtualBox VMs\ubuntu-server\LogsHardware UUID: fe16451a-f8b1-4ceb-bb90-8650d08c3c0eMemory size: 512MBPage Fusion: offVRAM size: 12MBCPU exec cap: 100%HPET: offChipset: piix3Firmware: BIOSNumber of CPUs: 1Synthetic Cpu: offCPUID overrides: NoneBoot menu mode: message and menuBoot Device (1): FloppyBoot Device (2): DVDBoot Device (3): HardDiskBoot Device (4): Not AssignedACPI: onIOAPIC: offPAE: offTime offset: 0 msRTC: UTCHardw. virt.ext: onHardw. virt.ext exclusive: offNested Paging: onLarge Pages: onVT-x VPID: onState: running (since 2011-10-11T11:26:30.089000000)Monitor count: 13D Acceleration: off2D Video Acceleration: offTeleporter Enabled: offTeleporter Port: 0Teleporter Address:Teleporter Password:Storage Controller Name (0): IDE ControllerStorage Controller Type (0): PIIX4Storage Controller Instance Number (0): 0Storage Controller Max Port Count (0): 2Storage Controller Port Count (0): 2Storage Controller Bootable (0): onStorage Controller Name (1): SATA ControllerStorage Controller Type (1): IntelAhciStorage Controller Instance Number (1): 0Storage Controller Max Port Count (1): 30Storage Controller Port Count (1): 1Storage Controller Bootable (1): onSATA Controller (0, 0): C:\Users\predrag\Documents\Master_CyberSecurity\VirtualBox VMs\ubuntu-server\ubuntu-server.vdi (UUID: bf4c167a-ec0a-42fa-915f-2ffbe2fd66fb) NIC 1: MAC: 0800274572ED, Attachment: NAT, Cable connected: on, Trace:off (file: none), Type: 82540EM, Reported speed: 2 Mbps, Boot priority: 0, Promisc Policy: denyNIC 1 Settings: MTU: 0, Socket (send: 64, receive: 64), TCP Window (send:64, receive: 64) NIC 2: MAC: 0800270858EA, Attachment: Host-only Interface 'VirtualBoxHost-Only Ethernet Adapter', Cable connected: on, Trace: off (file: none), Type:82540EM, Reported speed: 2 Mbps , Boot priority: 0, Promisc Policy: denyNIC 3: disabledNIC 4: disabledNIC 5: disabledNIC 6: disabledNIC 7: disabledNIC 8: disabledPointing Device: USB TabletKeyboard Device: PS/2 KeyboardUART 1: disabledUART 2: disabledAudio: enabled (Driver: DSOUND, Controller: AC97)Clipboard Mode: BidirectionalVideo mode: 640x480x0VRDE: disabledUSB: enabledUSB Device Filters: &lt;none&gt;Available remote USB devices: &lt;none&gt;Currently Attached USB Devices: &lt;none&gt;Shared folders: &lt;none&gt;VRDE Connection: not activeClients so far: 0Guest: Configured memory balloon size: 0 MBOS type: UbuntuAdditions run level: 0Guest Facilities: No active facilities.
+```
+
+## APPENDIX 2
+
+- Installation media: Ubuntu 10.04 LTS 32bit iso image;
+- HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);
+- NIC1 NAT;
+- NIC2 host only (for ssh and http access from host);
+- Language used in installation process: English and country Estonia;
+- Keyboard Layout English;
+- Hostname: pece
+- Partition methods: Guided, use entire disk
+- Username: pece
+- no http proxy
+- Default applications
+- sudo apt-get install lamp phpmyadmin
+- wget -c https://wordpress.org/latest.tar.gz
+- tar xvjf latest.tar.gz
+- sudo cp wordpress /var/www/wordpress
+- sudo nano /var/www/wordpress/wp-config.php Change the settings to
+  your needs
+
+# Bibliography
+
+Script kiddie: Wikipedia, Script Kiddie, October 2011, [link](https://en.wikipedia.org/wiki/Script_kiddie)
+
+User Manual: Oracle Corporation, User Manual, 2004-2011, [link](https://www.virtualbox.org/manual/ch08.html)
+
+# Footnotes:
+
+[1] [vnstat](https://humdi.net/vnstat/)
+
+[2] [Bmon](https://www.infradead.org/~tgr/bmon/)

@@ -9843,6 +9843,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-image-gallery@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "react-image-gallery@npm:1.4.0"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: a4c5c299ee5889158eb53e412edc8b9588aacbe987f4277058dfbd700bce11cdfa7f0273e4c23dd085881462d50e359d7a5bd809129bafd03f386ecf8e734c1e
+  languageName: node
+  linkType: hard
+
 "react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
@@ -11500,6 +11509,7 @@ __metadata:
     prettier-plugin-tailwindcss: ^0.6.11
     react: 19.0.0
     react-dom: 19.0.0
+    react-image-gallery: ^1.4.0
     reading-time: 1.5.0
     rehype-autolink-headings: ^7.1.0
     rehype-citation: ^2.0.0

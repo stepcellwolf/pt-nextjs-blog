@@ -1,0 +1,50 @@
+---
+title: 'Shifting Left and Right: A Comprehensive Guide to Bolstering Security'
+date: 2024-01-02 08:00
+tags: [shift-left, shift-right, cybersecurity, IaC, training, code-review, security testing, SDLC, development, OWASP, CI/CD, SIEM, SKF, SecurityCulture]
+---
+
+
+# Introduction
+
+In the changing world of cybersecurity, the words *“shifting left”* and *“shifting right”* are becoming more popular. They suggest ways to prevent security problems during the [Software Development Lifecycle (SDLC)](https://en.wikipedia.org/wiki/Systems_development_life_cycle). In this blog post, I will explain why shifting left and right is important and give tips on how to use these approaches effectively. I learned about this topic at a conference this year and wanted to share my thoughts on it.
+
+## Shifting Left: A First Line of Defense
+
+In the context of cybersecurity, it refers to integrating security measures earlier in the software development process. Traditionally, security was often an afterthought that was only addressed later in the development process or even after a product had been deployed. Shifting left aims to change the way things are done by making sure security is taken into account from the very beginning. More information from DevOps Research and Assessment (DORA) about [Shifting security shifting left](https://dora.dev/devops-capabilities/technical/shifting-left-on-security/).
+
+### Importance of Shifting Left
+
+- *Cost-Efficiency:* Detecting and fixing security vulnerabilities early in the development process is more cost-effective than fixing them after deployment. This approach is helpful for reducing the potential financial impact of security breaches.
+- *Speed and Agility:* Shifting left helps organizations maintain agility in their development cycles. By putting security measures in place early on, development teams can find and fix problems quickly without waiting a long time. This makes the process go faster and better.
+- *Enhanced Quality:* Integrating security from the start will enhance the overall quality of the software. This proactive approach helps make products that are strong and secure, which makes customers trust, and stay loyal.
+
+### How to Shift Left
+
+a. **Security Training:** Provide comprehensive security training for development teams to raise awareness about potential threats and best practices. Make the development team familiar with the [OWASP Top Ten](https://owasp.org/www-project-top-ten/) and the [Twelve-Factor App](https://12factor.net/) guide.
+
+b. **Automated Security Testing:** During the development process, implement automated security testing tools to identify vulnerabilities via the [CI/CD](https://en.wikipedia.org/wiki/CI/CD) pipeline. This helps ensure quick detection and resolution of issues.  I suggest you try to automate with [Infrastructure as Code (IaC)](https://en.wikipedia.org/wiki/Infrastructure_as_code).
+
+c. **Security Code Reviews:** Incorporate security-focused [code reviews](https://en.wikipedia.org/wiki/Code_review) as a standard practice. This involves reviewing the code for security vulnerabilities and ensuring that potential issues are caught early in the development cycle. Running multiple security tests at the same time is a good practice, but it might slow down development, so I recommend using one.
+
+## Shifting Right: A Focus on Post-Deployment Security
+
+Shifting right means going beyond the development phase to address potential threats and vulnerabilities in the production environment. This approach emphasizes continuous monitoring, incident response, and adaptive security measures.
+
+### Importance of Shifting Right:
+
+- *Real-Time Threat Detection:* Shifting to the right allows organizations to actively monitor their systems for potential threats in real-time. This proactive approach enables swift response to emerging security incidents.
+- *Incident Response:* If there is a security breach, shifting right makes sure that organizations have a strong incident response plan in place. This reduces downtime and minimizes the impact of security incidents on business operations.
+- *Continuous Improvement:* The shift to the right involves learning from security incidents and continuously improving security measures. This process helps organizations stay ahead of new cyber threats.
+
+### How to Shift Right
+
+a. **Continuous Monitoring:** Continuous monitoring tools should be implemented to track and analyze system activities for any unusual patterns or anomalies. Use tools such as [Security information and event management (SIEM)](https://en.wikipedia.org/wiki/Security_information_and_event_management).
+
+b. **Incident Response and Pentest Planning:** Develop an incident response plan and update it regularly to make sure that security incidents are dealt with quickly and well. Run a pentest every year or more often on critical systems, and run a bug bounty program if necessary.
+
+c. **Security Awareness Training:** Increase security awareness training to all employees, ensuring they remain vigilant and capable of identifying and reporting potential security incidents and phishing scams. Internally running the [OWASP Security Knowledge Framework (SKF)](https://www.securityknowledgeframework.org/) to train developers in writing secure code, by design.
+
+# Conclusion
+
+It's important for organizations to shift left and right when they're dealing with the complex cybersecurity landscape. By integrating security measures early in the development process and maintaining vigilance during the post-deployment phase, organizations can strengthen their defenses against evolving cyber threats. These strategies help organizations not only protect their assets, but also build a culture of security that is important for growth in today's digital age.

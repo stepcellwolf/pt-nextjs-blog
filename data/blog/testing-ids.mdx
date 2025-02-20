@@ -1,0 +1,303 @@
+---
+title: 'Testing IDS'
+date: 2012-01-03 00:00
+tags:
+  [
+    cyber security,
+    DDoS,
+    ids,
+    internet,
+    networking,
+    online,
+    openvas,
+    port scan,
+    snort,
+    SYN flood,
+    testing ids,
+    vulnerability scanning,
+  ]
+---
+
+# SCENARIO
+
+The objective of this laboratory test, scenario is to create a solution
+and instructions for testing an IDS\^1 systems usefulness for detecting
+attacks against a wordpress site. In addition, a repeatable process to
+evaluate vendor claims. Whatever passive IDS system sample delivered as
+a VM or a dedicated box. Creating the IDS system itself is out of scope.
+
+The process must be detailed enough so that somebody else can get the
+same results when applying that. The “other person” is expected to have
+IT knowledge sufficient to install and run a Linux desktop. Budget
+requirements: Modest – 2 machines + a tester (Joe) + networking
+equipment to connect the two machines and an IDS together. The process
+must test at least the following attacks:
+
+- Port scan
+
+- SYN flood
+
+- “Regular” DoS overwhelming attack (Ab)
+
+Optionally the process may test:
+
+- slowloris/pyloris
+
+- [Apache Range header DoS vulnerability](https://httpd.apache.org/security/CVE-011-3192.txt).
+
+- An attack targeting any other fairly recent (not older than 3-4 years)
+  known vulnerability that could in theory apply to the target system
+  (wordpress server)
+
+However the competition rules are: The highest number of attacks
+evaluated. Limits:
+
+- Each attack must be relevant eg. if it attacks IIS it’s NOT relevant.
+  If it attacks Windows RPC it’s not relevant. If it attacks some other
+  CMS eg. Drupal it’s NOT relevant. \* Basically equivalent attacks count
+  as one (different port scanners for example).
+
+- You must be able to explain in broad terms what the attack does eg:
+  attacks the vulnerability \#X in Apache server If the \#attacks is
+  equal.
+
+Lab interactions:
+
+Install 3 VM-s: Attacker IDS and Target
+
+1. Make sure all VM-s have two network adapters: NAT and Host-Only.
+
+2. Install Snort and it’s GUI called “acidbase” on [IDS](https://help.ubuntu.com/community/SnortIDS).
+
+3. Install Apache, Mysql and WordPress on Target.
+
+4. Execute an attack on Attacker towards the IP address on the Host
+   Only network.
+
+5. Take notice of the results displayed on Acid console.
+
+6. Reset counters, move on to next attack.
+
+Additionally, illustration 1 describes the overview of above scenario
+
+Illustration 1: Lab 5 Illustration of Scenario
+
+Firstly, setup procedure of snort, secondly available proposals and
+thirdly illustrating the results and the functionality of proposals.
+Finally, closing this laboratory report with conclusion. In addition,
+appendixes is configuration of VM’s – Virtual Machines.
+
+# SETUP of SNORT
+
+To setup snort in a right way, that will work for the second Host only
+network please following the instruction link provided with a full
+description and configuration of snort [SNORT2].
+
+After completing the setup and configuration to run snort on the second
+interface use the following command:
+
+`snort -c /etc/snort/snort/conf -i eth1`
+
+# PROPOSALS
+
+In total three proposals and each one is highlighted in the next
+sub-sections.
+
+## PROPOSAL 1
+
+Full instructions
+
+1. Set up IDS (Snort) and WordPress on the first PC
+
+2. Install Ubuntu server on the second PC . Then install all attacking
+   tools there:
+
+```
+wget enos.itcollege.ee/\~avein/lab4i.sh
+
+sudo sh lab4i.sh
+```
+
+````
+After that you should have:- ```ab.sh``` – DoS attack script – uses ab to generate traffic flood- ```apachekiller.pl``` – Apachekiller attack script More info: https://www.hackersgarage.com/apache-killer-denial-of-service-flaw-in-apache-webserver.html- ```README.txt``` – extra instructions- ```scan.sh``` - Port scanning script - uses nmap- ```sloworis.pl``` - Sloworis attack script More info: https://ha.ckers.org/slowloris/- ```synf.sh``` - syn flood attack script - uses hping33. Start your IDS/wordpress server and the server with attack tools. 4. Run each attack tool ONE AT A TIME (targeting the wordpress/IDS server of course) . Monitor the logs/notifications on yours IDS system (SNORT) and check whether wordpress site is still accessible. Let each attack tool run 2 minutes, then stop the attack by pressing CTRL+C on the terminal window where the attack tool is running. The only exeption is port scan- its better to wait until it finishes. After each attack save the IDS log and wait atlest 5 minutes before trying next tool (to give server time to recover). Best practice is to manually check if the server load is at normal (one can use htop for that).a) To run DoS attack:```sh ab.sh {target} eg sh ab.sh 192.168.56.101```b) For port scan:```sh scan.sh {target IP} eg sh scan.sh 192.168.56.101```c) For Syn flood (with hping3)```sh synf.sh {target} eg synf.sh 192.168.56.101/wordpress```d) For Sloworis attack:```perl slowloris.pl -dns {target} eg perl sloworis.pl -dns 192.168.56.101/wordpress```e) For Apachekiller attack:```perl apachekiller.pl {target IP} eg perl apachekiller.pl 192.168.56.101```## PROPOSAL 2### IntroFor this scenario we need to run several different attacks and scans to be able to compare the results with different IDS setups and rulesets. We might also want to test it with legitimate traffic to see that we dont get false positives in our alarms. We dont have that much legitimate traffic possibilities with 1 blog on our servers right now, but if we start tweaking the IDS false positives becomes an important metric and we might want to test normal usage and create traffic to run with tcpreplay for example. My proposal is to test the IDS with pytbull running on BackTrack. Pytbull is IDS testing framework and BackTrack a Linux ditribution. I will assume that we have WordPress server with running default Snort set up on it and working. No extensive testing has been done with different snort setups so we might have to tune the methods, but basic things should be covered.### DL and install [BackTrack](https://www.backtrack-linux.org/downloads/). Install it rather than running a live version for this scenario. Boot it up in default mode, start GUI and launch installation from desktop. Default login root / toor. Standard setup comes with pytbull and several pieces of software the IDS test-system depends on like nmap, hping3, nikto and others.### Setup connectionsConnect the machines and install ftp and ssh on server. We need ftp to get snort alert files and ssh to run attacks against.```apt-get install vsftpd openssh-server```### Setup pytbullYou will find pytbull from ```/pentest/enumeration/ids/pytbull/``` or Applications -) BackTrack -) Information Gathering -) Network Analysis -) IDS IPS Identification -) pytbull when using the GUI. Change the configuration file values to have correct connection information, user credentials and locations of dependencies. Here you also select which test modules out of the 9 available you want to run. ClientSideAttacks needs extra configuration.
+````
+
+```
+cd /pentest/enumeration/ids/pytbull/
+
+gedit config.cfg
+
+Example conf file: https://www.tud.ttu.ee/\~t061780/attacks/config.cfg
+
+Now get custom DoS module to have hping SYN flood and ApacheBench DoS
+tests covered.
+
+cd modules
+
+mv denialOfService.py denialOfService.py-backup
+
+wget https://www.tud.ttu.ee/\~t061780/attacks/denialOfService.py
+```
+
+You may want to refer to Pytbull documentation
+
+````
+    ### Run```/pentest/enumeration/ids/pytbull/pytbull -t WP/Snort server IP;```If everything works you will find html report file under /reports. If you have problems add -d on run for debugging.###(optional) SlowlorisTo have slowloris attack test for pytbull we need to get custom slowloris that allows to set how many packets to send because we dont want the tests to run forever. I added argument s that tells the script to stop after we have sent s packets.
+````
+
+```
+cd /pentest/stressing
+
+wget www.tud.ttu.ee/\~t061780/attacks/slowloris.pl
+
+Slowloris attack has been written into DoS module, you have to uncomment
+it. Lines 47-52.
+
+gedit /pentest/enumeration/ids/pytbull/modules/denialOfService.py
+```
+
+## PROPOSAL 3
+
+For this proposal I will suggest to use open source tool OpenVas for vulnerability scanning, to test our IDS system. It contains many security tools integrated. The security and analysis tools are: Nikto, nmap, ike-scan, snmpwalk, amap, ldapsearch, SLAD (John-the-Ripper, Chkrootkit, LSOF, ClamAV, Tripwire, TIGER, logwatch, trapwatch, lm-sensors, snort and ovaldi), pnscan, portbunny, strobe, w3af, etc.Instructions of installation process, for further more information please refer to [link](https://www.openvas.org/setup-and-start.html)
+
+### Step 1: Configure OBS Repository
+
+```
+sudo apt-get -y install python-software-propertiessudo add-apt-repository "deb https://download.opensuse.org/repositories/security:/OpenVAS:STABLE:/v4/xUbuntu_10.04/./"sudo apt-key adv --keyserver hkp://keys.gnupg.net --recv-keys BED1E87979EAFD54 sudo apt-get update
+```
+
+### Step 2: Quick-Install OpenVAS
+
+```
+    sudo apt-get -y install greenbone-security-assistant gsd openvas-cli openvas-manager openvas-scanner openvas-administrator sqlite3 xsltproc
+```
+
+### Step 3: Quick-Start OpenVAS
+
+(copy and paste whole block, during first time you will be asked to set
+a password for user “admin”)
+
+```
+test -e /var/lib/openvas/CA/cacert.pem || sudo openvas-mkcert -qsudo openvas-nvt-sync test -e /var/lib/openvas/users/om || sudo openvas-mkcert-client -n om -i sudo /etc/init.d/openvas-manager stopsudo /etc/init.d/openvas-scanner stopsudo openvassdsudo openvasmd --migratesudo openvasmd --rebuildsudo killall openvassdsleep 15sudo /etc/init.d/openvas-scanner startsudo /etc/init.d/openvas-manager startsudo /etc/init.d/openvas-administrator restartsudo /etc/init.d/greenbone-security-assistant restarttest -e /var/lib/openvas/users/admin || sudo openvasad -c add_user -n admin -r Admin
+```
+
+### Step 4: Log into OpenVAS as “admin”
+
+Open `https://localhost:9392/` or start `“gsd”` on a command line as a
+regular user (not as root!). Optional we can use and the Slowloris and
+Pyloris DoS attacks.
+
+Download link for [Slowloris](https://ha.ckers.org/slowloris/slowloris.pl).
+
+The above solution and tool will help us to check and test our IDS
+system usefulness. It tests the following attacks: Port scan, SYN flood,
+DoS, etc. The results are presented with nice GUI interface. For more
+info about the project please refer to
+[www.openvas.org](https://www.openvas.org/).
+
+# RESULTS
+
+After executing the above proposal we will highlight the results.
+Nevertheless, only the Proposal 1 was able to run the test. Others two,
+Proposal 2 and Proposal 3 were unsuccessful of installation process and
+configuration and to run the attacks. Moreover, the result are presented
+from the total amount of reports, registered alerts in the snort. This
+is done by help of web interface of Basic Analysis and Security Engine
+in addition Analysis Console for Intrusion Databases (ACID) project tool
+[ACID]. Therefore, the result from the Proposal 1 and from the rest are
+highlighted below:
+
+- Proposal 1
+- DoS – registered alerts: 2;
+- Port scan : 8;
+- synf.sh: 1344;
+- slowloris.pl: 1782;
+- apachekiller.pl: not working;
+- Proposal 2
+- pytbull: 0, the message was: Error: FTP error, 550 failed to open
+  file.
+- Proposal 3
+- Too complicated to be configured and installed. The instructions and
+  the procedures should be more easy. After few hours of configuring
+  and test, tweaks are is still not working. Yet there are many good
+  tutorials how to configure OpenVAS please refer [OpenVas1] and
+  [OpenVas2].
+
+# CONCLUSION
+
+Primarily, setting-up IDS, the Snort, it is not an easy task to
+complete. On the other hand, configuring, installing, etc. the testing
+tools for IDS system is even more complicated. Therefore, the Proposal 1
+has the best solution and installation process of the test tools.
+Despite, that it was the only one that worked. Finally, recommendation
+for the IDS solutions and in addition to the penetrating tools to test
+the usefulness of IDS has to be more simple and stepwise solution.
+However, the above scenario and proposals are great tools and solutions
+for a future reader.
+
+# APPENDIXES
+
+Appendix 1 is the configuration of the attacker virtual machine, in more
+detail Blacktrack distribution. Secondly, Appendix 2 is the ubuntu
+wordpress configuration server and additional is the configuration and
+setup process and refer links of IDS Snort virtual machine.
+
+## APPENDIX 1
+
+- Installation media: Black Track 5 GNOME 32bit iso image;
+- HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);
+- NIC1 NAT;
+- NIC2 host only (for ssh and http access from host);
+- Downloadable [link](https://www.backtrack-linux.org/downloads/).
+
+## APPENDIX 2
+
+- Installation media: Ubuntu 10.04 32bit iso image;
+- HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);
+- NIC1 NAT;
+- NIC2 host only (for ssh and http access from host);
+- Language used in installation process: English and country Estonia;
+- Keyboard Layout English;
+- Hostname: pece
+- Partition methods: Guided, use entire disk
+- Username: pece
+- no http proxy
+- Default applications
+
+```
+sudo apt-get install lamp phpmyadminwget -c https://wordpress.org/latest.tar.gztar xvjf latest.tar.gzsudo cp wordpress /var/www/wordpresssudo nano /var/www/wordpress/wp-config.php</pre)
+```
+
+Change the settings to your needs.
+
+## APPENDIX 3
+
+- Installation media: Ubuntu 10.04 32bit iso image;
+- HW: Virtualbox, 1CPU 32bit, 512MB RAM, 8GB HD (dynamic allocation);
+- NIC1 NAT;
+- NIC2 host only (for ssh and http access from host);
+- Language used in installation process: English and country Estonia;
+- Keyboard Layout English;
+- Hostname: pece
+- Partition methods: Guided, use entire disk
+- Username: pece
+- no http proxy
+- Default applications
+- Snort configuration and installation refer to [SNORT1] in addition,
+  please refer to [SNORT2].
+
+# Bibliography
+
+SNORT2: Nick Moore, Snort 2.8.4.1 Ubuntu 9 Installation Guide, June
+2009, [link](https://www.snort.org/assets/113/Snort_2.8.4.1_Ubuntu.pdf).
+
+ACID: Basic Analysis and Security Engine, Welcome to the Basic Analysis
+and Security Engine (BASE) project, 2008, [link](https://base.secureideas.net/about.php).
+
+OpenVas1: NA, Backtrack 5- OpenVas Tutorial, NA, [link](https://www.ehacking.net/2011/06/backtrack-5-openvas-tutorial.html).
+
+OpenVas2: BackTrack Linux, Getting started with OpenVas, June 2011, [link](https://www.backtrack-linux.org/wiki/index.php/OpenVas).
+
+SNORT1: kat-amsterdam, SnortIDS, December 2010, [link](https://help.ubuntu.com/community/SnortIDS).
+
+[1] IDS – Intrusion detection system

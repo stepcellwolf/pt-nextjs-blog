@@ -1,0 +1,137 @@
+---
+title: 'Texworks 0.5r952, error libpoppler-qt4.so.3, Ubuntu 12.04'
+date: 2012-06-18 23:00
+tags: [libpoppler, texworks, ubuntu]
+---
+
+I had to use the texworks to do some changes in my LaTeX CV template,
+and in the previous version of Ubuntu I had not issues at all. But
+unfortunately in the new latest version of Ubuntu 12.04 LTS (Precise
+Pangolin) I had to do some tricks to get it started. It is therefore, I
+will provide the readers and solution of how to fix this issue. But
+before we continue I would like to mention that this issue has never
+been posted before, anywhere else.
+
+Installation of [Texworks](https://tug.org/texworks/ 'Texworks')
+
+In the shell command we install the texworks with the following script:
+
+`sudo apt-get install texworks`
+
+# Issue / Error
+
+After the installation is finished, then if we try to run the program
+from Unity or even from the terminal, it will give us an error:\<
+
+````
+    texworks: error while loading shared libraries: libpoppler-qt4.so.3: cannot open shared object file: No such file or directory```So now we know that there is some issue with the ```libpoppler-qt4``` library. To determine if we miss any other dependency libraries we can double check with the following command:```ldd /usr/bin/texworks```And the following output should look like this:
+````
+
+```
+linux-gate.so.1 = (0xb76f2000)
+
+libhunspell-1.3.so.0 =\) /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0
+(0xb7682000)
+
+libpoppler-qt4.so.3 =\) not found
+
+libz.so.1 =\) /lib/i386-linux-gnu/libz.so.1 (0xb766b000)
+
+libQtDBus.so.4 =\) /usr/lib/i386-linux-gnu/libQtDBus.so.4 (0xb75eb000)
+
+libQtScript.so.4 =\) /usr/lib/i386-linux-gnu/libQtScript.so.4
+(0xb7367000)
+
+libQtScriptTools.so.4 =\) /usr/lib/i386-linux-gnu/libQtScriptTools.so.4
+(0xb72b2000)
+
+libQtXml.so.4 =\) /usr/lib/i386-linux-gnu/libQtXml.so.4 (0xb7272000)
+
+libQtGui.so.4 =\) /usr/lib/i386-linux-gnu/libQtGui.so.4 (0xb679e000)
+
+libQtCore.so.4 =\) /usr/lib/i386-linux-gnu/libQtCore.so.4 (0xb64c1000)
+
+libpthread.so.0 =\) /lib/i386-linux-gnu/libpthread.so.0 (0xb64a6000)
+
+libstdc++.so.6 =\) /usr/lib/i386-linux-gnu/libstdc++.so.6 (0xb63c1000)
+
+libgcc\_s.so.1 =\) /lib/i386-linux-gnu/libgcc\_s.so.1 (0xb63a3000)
+
+libc.so.6 =\) /lib/i386-linux-gnu/libc.so.6 (0xb61fd000)
+
+libdbus-1.so.3 =\) /lib/i386-linux-gnu/libdbus-1.so.3 (0xb61b4000)
+
+libm.so.6 =\) /lib/i386-linux-gnu/libm.so.6 (0xb6188000)
+
+libfontconfig.so.1 =\) /usr/lib/i386-linux-gnu/libfontconfig.so.1
+(0xb6154000)
+
+libaudio.so.2 =\) /usr/lib/i386-linux-gnu/libaudio.so.2 (0xb613b000)
+
+libglib-2.0.so.0 =\) /lib/i386-linux-gnu/libglib-2.0.so.0 (0xb6041000)
+
+libpng12.so.0 =\) /lib/i386-linux-gnu/libpng12.so.0 (0xb6017000)
+
+libfreetype.so.6 =\) /usr/lib/i386-linux-gnu/libfreetype.so.6
+(0xb5f7d000)
+
+libgobject-2.0.so.0 =\) /usr/lib/i386-linux-gnu/libgobject-2.0.so.0
+(0xb5f2e000)
+
+libSM.so.6 =\) /usr/lib/i386-linux-gnu/libSM.so.6 (0xb5f25000)
+
+libICE.so.6 =\) /usr/lib/i386-linux-gnu/libICE.so.6 (0xb5f0a000)
+
+libXi.so.6 =\) /usr/lib/i386-linux-gnu/libXi.so.6 (0xb5efa000)
+
+libXrender.so.1 =\) /usr/lib/i386-linux-gnu/libXrender.so.1 (0xb5ef0000)
+
+libXext.so.6 =\) /usr/lib/i386-linux-gnu/libXext.so.6 (0xb5ede000)
+
+libX11.so.6 =\) /usr/lib/i386-linux-gnu/libX11.so.6 (0xb5daa000)
+
+libdl.so.2 =\) /lib/i386-linux-gnu/libdl.so.2 (0xb5da4000)
+
+librt.so.1 =\) /lib/i386-linux-gnu/librt.so.1 (0xb5d9b000)
+
+/lib/ld-linux.so.2 (0xb76f3000)
+
+libexpat.so.1 =\) /lib/i386-linux-gnu/libexpat.so.1 (0xb5d71000)
+
+libXt.so.6 =\) /usr/lib/i386-linux-gnu/libXt.so.6 (0xb5d15000)
+
+libXau.so.6 =\) /usr/lib/i386-linux-gnu/libXau.so.6 (0xb5d11000)
+
+libpcre.so.3 =\) /lib/i386-linux-gnu/libpcre.so.3 (0xb5cd4000)
+
+libffi.so.6 =\) /usr/lib/i386-linux-gnu/libffi.so.6 (0xb5ccd000)
+
+libuuid.so.1 =\) /lib/i386-linux-gnu/libuuid.so.1 (0xb5cc7000)
+
+libxcb.so.1 =\) /usr/lib/i386-linux-gnu/libxcb.so.1 (0xb5ca6000)
+
+libXdmcp.so.6 =\) /usr/lib/i386-linux-gnu/libXdmcp.so.6 (0xb5c9e000)
+
+```
+
+Where we can see from the above output that the `libpoppler-qt4.so.3 = not found ` is missing.The best way to solve this issue, first we have to locate where are the other libraries of QT4. This is very simple approach, because the other libraries links, location is provided from the above output. Therefore, we can see that in the path `/usr/lib/i386-linux-gnu/` there is an library called: `libpoppler-qt4.so.4`.# ResolutionFrom the above output, and the path that we have found of the missing library, there is an simple and easy way of fixing this issue, shown below.Therefore, in the terminal we can make an soft link with the missing library from the already existing one, with the following:`sudo ln -s /usr/lib/i386-linux-gnu/libpoppler-qt4.so.4 /usr/lib/i386-linux-gnu/libpoppler-qt4.so.3`And now the texworks works perfectly!# Details
+
+```
+\$ texworks --version
+
+TeXworks 0.5r952 (Debian)
+
+Copyright (C) 2007-2011 Jonathan Kew, Stefan Löffler
+
+License GPLv2+: GNU GPL (version 2 or later)
+https://gnu.org/licenses/gpl.html
+
+This is free software: you are free to change and redistribute it.
+
+There is NO WARRANTY, to the extent permitted by law.
+
+\`\`\`
+
+```
+
+Also this bug/issue has been reported in [Launchpad.net](https://bugs.launchpad.net/ubuntu/+source/texworks/+bug/1015193 'Launchpad Bug').
