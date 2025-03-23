@@ -1,5 +1,17 @@
 const projectsData = [
   {
+    title: 'CyberSec4OT',
+    date: 'November 2024',
+    description: `EU Project The CyberSec4OT project addresses the pressing challenges arising from the convergence of Information Technology (IT) and Operational Technology (OT) within the framework of Industry 4.0.`,
+    href: 'https://www.linkedin.com/company/cyber4ot/',
+  },
+  {
+    title: 'OSCRAT',
+    date: 'December 2024',
+    description: `EU Project Open-Source Cyber Resilience Act Tools (OSCRAT). Empowering SMEs with open-source tools for Cyber Resilience Act compliance.`,
+    href: 'https://www.linkedin.com/company/oscrat-eu-project/',
+  },
+  {
     title: 'Unicis.Tech OÜ',
     date: 'September 2022',
     description: `Founder of an open source startup project that develops SaaS Platform and Atlassian applications for compliance, privacy, and legal teams.`,

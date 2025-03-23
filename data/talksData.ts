@@ -223,6 +223,12 @@ const talksData = [
     location: 'Remote',
     description: 'Vebinar o temi sa ISOC Fundamentals treninga',
   },
+  {
+    title: 'Open Source is NOT Dead – What Makes It Such a Popular Business Model?',
+    date: '27 February 2025',
+    location: 'SumUP Berlin',
+    description: 'Meetup  Nemački Kutak',
+  },
 ]
 
 export default talksData

@@ -173,6 +173,12 @@ export const resumeData = [
       },
       {
         title: 'Industry Contributor',
+        subTitle: 'CertNexus Certifications: Cyber Secure Coder (CSC).',
+        date: 'November 2022',
+        href: 'https://certnexus.com/cyber-secure-coder/',
+      },
+      {
+        title: 'Industry Contributor',
         subTitle: 'CertNexus Certifications: CyberSec First Responder (CFR).',
         date: 'February 2022',
         href: 'https://www.credential.net/f66b7923-374a-48bd-bc92-5f740d55b3e1#gs.sr7uxs',
@@ -206,6 +212,10 @@ export const resumeData = [
       {
         subTitle: 'Co-Founder of Internet Governance Forum Macedonia IGF-MKD',
         href: 'http://igfmkd.mk',
+      },
+      {
+        subTitle: 'Member and co-founder of ISOC-MKD',
+        href: 'http://isoc.mk',
       },
       {
         subTitle:
