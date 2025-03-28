@@ -151,6 +151,11 @@ export const resumeData = [
     title: 'Certifications',
     items: [
       {
+        title: 'PECB Chief Informatioin Security Officer',
+        subTitle: 'Certificate No: CISOO1108028-2025-03.',
+        date: 'March 2025',
+      },
+      {
         title: 'Certified Payment Security Practitioner v2.0',
         subTitle: 'Certificate No: CPSP01042401.',
         date: 'April 2024',
