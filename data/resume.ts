@@ -212,6 +212,10 @@ export const resumeData = [
     title: 'Membership',
     items: [
       {
+        subTitle: 'Subject Matter Expert at EU CyberNet',
+        href: 'http://www.eucybernet.eu/',
+      },
+      {
         subTitle: 'Programme Committee for SEEDIG 6',
         href: 'https://seedig.net/seedig6-cfi/',
       },
