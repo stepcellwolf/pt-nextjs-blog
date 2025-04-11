@@ -151,7 +151,7 @@ export const resumeData = [
     title: 'Certifications',
     items: [
       {
-        title: 'PECB Chief Informatioin Security Officer',
+        title: 'PECB Chief Information Security Officer',
         subTitle: 'Certificate No: CISOO1108028-2025-03.',
         date: 'March 2025',
         href: 'https://www.credly.com/badges/bec6630f-9a06-4531-acbd-67602de9081b/linked_in?t=stu1fb',
