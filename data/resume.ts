@@ -151,6 +151,12 @@ export const resumeData = [
     title: 'Certifications',
     items: [
       {
+        title: 'The Linux Foundation LFEL1001: Understanding the EU Cyber Resilience Act (CRA)',
+        subTitle: 'Certificate No: LF-tqrkq80tay.',
+        date: 'April 19, 2025',
+        href: 'https://www.credly.com/badges/88579ba2-839e-4b96-a155-8c54f82f2a5f',
+      },
+      {
         title: 'PECB Chief Information Security Officer',
         subTitle: 'Certificate No: CISOO1108028-2025-03.',
         date: 'March 2025',

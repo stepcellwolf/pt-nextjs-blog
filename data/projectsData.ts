@@ -3,13 +3,15 @@ const projectsData = [
     title: 'CyberSec4OT',
     date: 'November 2024',
     description: `EU Project The CyberSec4OT project addresses the pressing challenges arising from the convergence of Information Technology (IT) and Operational Technology (OT) within the framework of Industry 4.0.`,
-    href: 'https://www.linkedin.com/company/cyber4ot/',
+    imgSrc: '/static/images/cybersec4ot.jpg',
+    href: 'https://cysecsurveys.com/cybersec4ot/en/',
   },
   {
     title: 'OSCRAT',
     date: 'December 2024',
     description: `EU Project Open-Source Cyber Resilience Act Tools (OSCRAT). Empowering SMEs with open-source tools for Cyber Resilience Act compliance.`,
-    href: 'https://www.linkedin.com/company/oscrat-eu-project/',
+    imgSrc: '/static/images/OSCRAT-logo-hor.png',
+    href: 'https://oscrat.eu/',
   },
   {
     title: 'Unicis.Tech OÜ',
