@@ -1,1 +1,3 @@
-npx --no-install lint-staged
+#!/bin/sh
+export PATH="/usr/local/bin:$PATH"  # Or wherever your Node is
+npx lint-staged

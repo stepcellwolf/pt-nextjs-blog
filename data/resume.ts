@@ -151,6 +151,12 @@ export const resumeData = [
     title: 'Certifications',
     items: [
       {
+        title: 'Industry Contributor: Cyber Secure Software Developer (CSSD) Exam CSD-110',
+        subTitle: 'CertNexus',
+        date: 'June 19, 2025',
+        href: 'https://certifications.certnexus.com/7a390e2d-bfba-429c-b5b9-89b2d4fdf8bc#acc.IjZlvaXh',
+      },
+      {
         title: 'The Linux Foundation LFEL1001: Understanding the EU Cyber Resilience Act (CRA)',
         subTitle: 'Certificate No: LF-tqrkq80tay.',
         date: 'April 19, 2025',
@@ -190,10 +196,10 @@ export const resumeData = [
         href: 'https://certnexus.com/cyber-secure-coder/',
       },
       {
-        title: 'Industry Contributor',
-        subTitle: 'CertNexus Certifications: CyberSec First Responder (CFR).',
+        title: 'CertNexus Certifications Industry Contributor: CyberSec First Responder (CFR)',
+        subTitle: 'CertNexus',
         date: 'February 2022',
-        href: 'https://www.credential.net/f66b7923-374a-48bd-bc92-5f740d55b3e1#gs.sr7uxs',
+        href: 'https://certifications.certnexus.com/f66b7923-374a-48bd-bc92-5f740d55b3e1#acc.Ju8eNlk6',
       },
       {
         title: 'Certified Project Manager',
